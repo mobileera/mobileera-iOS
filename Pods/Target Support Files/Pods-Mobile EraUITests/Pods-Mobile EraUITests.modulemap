@@ -1,0 +1,6 @@
+framework module Pods_Mobile_EraUITests {
+  umbrella header "Pods-Mobile EraUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

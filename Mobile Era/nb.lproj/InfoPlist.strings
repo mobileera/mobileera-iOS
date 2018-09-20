@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Mobile Era
+
+  Created by Konstantin Loginov on 15/05/2018.
+  Copyright © 2018 FotMob. All rights reserved.
+*/
+
+"NSCalendarsUsageDescription" = "For å legge til et foredrag i kalenderen trenger vi deg til å gi tilgang til det";

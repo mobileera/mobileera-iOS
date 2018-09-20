@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="HKS-Gj-ke0">
+                                <rect key="frame" x="128" y="286" width="118" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="a9H-JK-9Kk"/>
+                                    <constraint firstAttribute="height" constant="115" id="nmf-2o-KDA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-white" translatesAutoresizingMaskIntoConstraints="NO" id="Z73-zL-51h">
+                                <rect key="frame" x="102.5" y="594" width="169" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="Eti-7J-2ed"/>
+                                    <constraint firstAttribute="width" constant="169" id="ZNv-rU-PGg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.17254901960784313" green="0.34509803921568627" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" name="Primary Color"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z73-zL-51h" secondAttribute="bottom" constant="32" id="Hpx-qK-est"/>
+                            <constraint firstItem="HKS-Gj-ke0" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="NBx-c0-aeF"/>
+                            <constraint firstItem="Z73-zL-51h" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bny-Lf-dty"/>
+                            <constraint firstItem="HKS-Gj-ke0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nC1-p5-cKA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="118" height="115"/>
+        <image name="logo-white" width="169" height="41"/>
+        <namedColor name="Primary Color">
+            <color red="0.17299999296665192" green="0.0" blue="0.63099998235702515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
