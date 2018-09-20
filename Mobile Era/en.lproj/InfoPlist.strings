@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Mobile Era
+
+  Created by Konstantin Loginov on 15/05/2018.
+  Copyright © 2018 FotMob. All rights reserved.
+*/
+
+"NSCalendarsUsageDescription" = "To add a session to the calendar we need you to grant access to it";

@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  Mobile Era
+
+  Created by Konstantin Loginov on 22/04/2018.
+  Copyright © 2018 FotMob. All rights reserved.
+*/
+
+"speakers" = "Foredragsholdere";
+"venue" = "Spillested";
+"schedule" = "Dagsplan";
+"room" = "Rom";
+"copied" = "Adressen kopierte til utklippstavlen";
+"copirights" = "Utviklet med ❤️";
+"developers_email" = "loginov.k@gmail.com";
+"developer" = "Konstantin Loginov (%@)";
+"sponsors" = "Sponsorer";
+"codeofconduct" = "Adferdskodeks";
+"mobileera_team" = "Mobile Era Laget";
+"contact_us" = "Kontakt oss";
+"cant_send_email" = "Kan ikke sende en e-post";

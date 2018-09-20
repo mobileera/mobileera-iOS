@@ -1,0 +1,78 @@
+
+/* Class = "UIButton"; normalTitle = "Clear Filters"; ObjectID = "6Td-dq-aXb"; */
+"6Td-dq-aXb.normalTitle" = "Clear Filters";
+
+/* Class = "UILabel"; text = "Party Venue"; ObjectID = "AgH-9O-Jeb"; */
+"AgH-9O-Jeb.text" = "Fest spillested";
+
+/* Class = "UILabel"; text = "Venue"; ObjectID = "BYb-W2-cqP"; */
+"BYb-W2-cqP.text" = "Spillested";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "CbF-6h-ULe"; */
+"CbF-6h-ULe.normalTitle" = "OK";
+
+/* Class = "UITabBarItem"; title = "Speakers"; ObjectID = "Fj7-XZ-KvS"; */
+"Fj7-XZ-KvS.title" = "Speakers";
+
+/* Class = "UITabBarItem"; title = "Schedule"; ObjectID = "Fu3-UA-VeG"; */
+"Fu3-UA-VeG.title" = "Dagsplan";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "G5D-tK-UA6"; */
+"G5D-tK-UA6.title" = "Title";
+
+/* Class = "UISegmentedControl"; MId-ea-rl5.segmentTitles[0] = "Workshops"; ObjectID = "MId-ea-rl5"; */
+"MId-ea-rl5.segmentTitles[0]" = "Workshops";
+
+/* Class = "UISegmentedControl"; MId-ea-rl5.segmentTitles[1] = "Day 1"; ObjectID = "MId-ea-rl5"; */
+"MId-ea-rl5.segmentTitles[1]" = "Day 1";
+
+/* Class = "UISegmentedControl"; MId-ea-rl5.segmentTitles[2] = "Day 2"; ObjectID = "MId-ea-rl5"; */
+"MId-ea-rl5.segmentTitles[2]" = "Day 2";
+
+/* Class = "UILabel"; text = "Show only favorite sessions?"; ObjectID = "PoO-Zq-gr7"; */
+"PoO-Zq-gr7.text" = "Vis bare favorittforelesninger?";
+
+/* Class = "UITabBarItem"; title = "Venue"; ObjectID = "QhN-xT-vAY"; */
+"QhN-xT-vAY.title" = "Spillested";
+
+/* Class = "UINavigationItem"; title = "Information"; ObjectID = "WoG-G8-y5F"; */
+"WoG-G8-y5F.title" = "Informasjon";
+
+/* Class = "UITabBarItem"; title = "Venue"; ObjectID = "XAc-3Z-TET"; */
+"XAc-3Z-TET.title" = "Spillested";
+
+/* Class = "UIBarButtonItem"; title = "Information"; ObjectID = "ZZ7-do-NGc"; */
+"ZZ7-do-NGc.title" = "Informasjon";
+
+/* Class = "UILabel"; text = "Felix Konferansesenter\nBryggetorget 3\n0250 Oslo"; ObjectID = "aF5-DO-2ws"; */
+"aF5-DO-2ws.text" = "Felix Konferansesenter\nBryggetorget 3\n0250 Oslo";
+
+/* Class = "UITabBarItem"; title = "Schedule"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "Schedule";
+
+/* Class = "UITabBarItem"; title = "Speakers"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Foredragsholdere";
+
+/* Class = "UILabel"; text = "Filter"; ObjectID = "fEb-eA-MFL"; */
+"fEb-eA-MFL.text" = "Filter";
+
+/* Class = "UILabel"; text = "Select tags:"; ObjectID = "lnS-x9-ix0"; */
+"lnS-x9-ix0.text" = "Velg emner:";
+
+/* Class = "UIBarButtonItem"; title = "Information"; ObjectID = "qjr-xQ-Y3g"; */
+"qjr-xQ-Y3g.title" = "Informasjon";
+
+/* Class = "UIBarButtonItem"; title = "Information"; ObjectID = "w90-px-66m"; */
+"w90-px-66m.title" = "Informasjon";
+
+/* Class = "UILabel"; text = "Beer Palace\nHolmens gate 3\n0250 Oslo"; ObjectID = "wvn-EB-l7a"; */
+"wvn-EB-l7a.text" = "Beer Palace\nHolmens gate 3\n0250 Oslo";
+
+/* Class = "UILabel"; text = "2018"; ObjectID = "bF9-rx-x1K"; */
+"bF9-rx-x1K.text" = "2018";
+
+/* Class = "UILabel"; text = "Information"; ObjectID = "OEC-ZK-Dq0"; */
+"OEC-ZK-Dq0.text" = "Informasjon";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "fpd-kK-QBn"; */
+"fpd-kK-QBn.normalTitle" = "OK";
