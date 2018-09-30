@@ -32,7 +32,7 @@ class Session: Codable {
     
     var isWorkshop: Bool {
         guard let id = id else { return false }
-        return id >= 400 && id < 500
+        return id >= 200 && id < 300
     }
     
     var isSystemAnnounce: Bool {
