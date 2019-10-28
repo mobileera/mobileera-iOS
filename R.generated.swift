@@ -268,48 +268,7 @@ struct R: Rswift.Validatable {
   
   /// This `R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
-    /// Nib `SessionTableViewCell`.
-    static let sessionTableViewCell = _R.nib._SessionTableViewCell()
-    /// Nib `SessionTableViewHeader`.
-    static let sessionTableViewHeader = _R.nib._SessionTableViewHeader()
-    /// Nib `SessionTableViewLegendCell`.
-    static let sessionTableViewLegendCell = _R.nib._SessionTableViewLegendCell()
-    /// Nib `SessionsDetailsViewController`.
-    static let sessionsDetailsViewController = _R.nib._SessionsDetailsViewController()
-    /// Nib `SpeakerTableViewCell`.
-    static let speakerTableViewCell = _R.nib._SpeakerTableViewCell()
-    /// Nib `SpeakersDetailsViewController`.
-    static let speakersDetailsViewController = _R.nib._SpeakersDetailsViewController()
     
-    /// `UINib(name: "SessionTableViewCell", in: bundle)`
-    static func sessionTableViewCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.sessionTableViewCell)
-    }
-    
-    /// `UINib(name: "SessionTableViewHeader", in: bundle)`
-    static func sessionTableViewHeader(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.sessionTableViewHeader)
-    }
-    
-    /// `UINib(name: "SessionTableViewLegendCell", in: bundle)`
-    static func sessionTableViewLegendCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.sessionTableViewLegendCell)
-    }
-    
-    /// `UINib(name: "SessionsDetailsViewController", in: bundle)`
-    static func sessionsDetailsViewController(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.sessionsDetailsViewController)
-    }
-    
-    /// `UINib(name: "SpeakerTableViewCell", in: bundle)`
-    static func speakerTableViewCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.speakerTableViewCell)
-    }
-    
-    /// `UINib(name: "SpeakersDetailsViewController", in: bundle)`
-    static func speakersDetailsViewController(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.speakersDetailsViewController)
-    }
     
     fileprivate init() {}
   }
@@ -843,93 +802,7 @@ struct _R: Rswift.Validatable {
   
   struct nib: Rswift.Validatable {
     static func validate() throws {
-      try _SpeakerTableViewCell.validate()
-      try _SessionTableViewCell.validate()
-      try _SpeakersDetailsViewController.validate()
     }
-    
-    struct _SessionTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "SessionTableViewCell"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> SessionTableViewCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SessionTableViewCell
-      }
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "star", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'star' is used in nib 'SessionTableViewCell', but couldn't be loaded.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct _SessionTableViewHeader: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "SessionTableViewHeader"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> SessionTableViewHeader? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SessionTableViewHeader
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct _SessionTableViewLegendCell: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "SessionTableViewLegendCell"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> SessionTableViewLegendCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SessionTableViewLegendCell
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct _SessionsDetailsViewController: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "SessionsDetailsViewController"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct _SpeakerTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "SpeakerTableViewCell"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> SpeakerTableViewCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SpeakerTableViewCell
-      }
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "website", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'website' is used in nib 'SpeakerTableViewCell', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "twitter", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'twitter' is used in nib 'SpeakerTableViewCell', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "github", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'github' is used in nib 'SpeakerTableViewCell', but couldn't be loaded.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct _SpeakersDetailsViewController: Rswift.NibResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "SpeakersDetailsViewController"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "twitter-btn", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'twitter-btn' is used in nib 'SpeakersDetailsViewController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "website-btn", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'website-btn' is used in nib 'SpeakersDetailsViewController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "github-btn", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'github-btn' is used in nib 'SpeakersDetailsViewController', but couldn't be loaded.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
     fileprivate init() {}
   }
   

@@ -128,11 +128,11 @@ class SessionsDetailsViewController: BaseViewController, EKEventEditViewDelegate
         paragraphStyle.lineSpacing = 2
 
         let titleText = NSMutableAttributedString (string: session.title)
-        titleText.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange (location: 0, length: titleText.length))
+        titleText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange (location: 0, length: titleText.length))
         lblTitle.attributedText = titleText
         
         let descriptionText = NSMutableAttributedString (string: session.description ?? "")
-        descriptionText.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange (location: 0, length: descriptionText.length))
+        descriptionText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange (location: 0, length: descriptionText.length))
         lblDescription.attributedText = descriptionText
         
         session.tags?.forEach({ tagsStackView.addArrangedSubview(Tag.createTag(label: $0, clickable: false))})
