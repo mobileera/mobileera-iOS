@@ -40,7 +40,7 @@ class VenueViewController: BaseViewController {
         super.viewDidLoad()
         title = R.string.localizable.venue()
         
-        scrollView.contentInset = UIEdgeInsetsMake(15, 0, 15, 0)
+        scrollView.contentInset = UIEdgeInsets.init(top: 15, left: 0, bottom: 15, right: 0)
         
         let venue = GMSCameraPosition.camera(withLatitude: venueLatitude, longitude: venueLongitude, zoom: 17.0)
         let party = GMSCameraPosition.camera(withLatitude: partyLatitude, longitude: partyLongitude, zoom: 17.0)

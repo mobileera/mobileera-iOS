@@ -82,7 +82,7 @@ class SessionTableViewCell: UICustomTableViewCell {
             let attributedText = NSMutableAttributedString (string: text)
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = 2
-            attributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange (location: 0, length: attributedText.length))
+            attributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange (location: 0, length: attributedText.length))
             lblTitle.attributedText = attributedText
         }
         

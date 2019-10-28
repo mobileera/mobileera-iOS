@@ -45,7 +45,7 @@ class ScheduleViewController: BaseViewController {
         daySegmentControl.layer.borderWidth = 1
         daySegmentControl.clipsToBounds = true
         
-        daySegmentControl.setTitleTextAttributes([NSAttributedStringKey.font : UIFont.systemFont(ofSize: 14, weight: .medium)], for: .normal)
+        daySegmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .medium)], for: .normal)
         
         loadData()
         

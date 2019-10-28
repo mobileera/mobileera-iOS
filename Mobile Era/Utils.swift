@@ -22,7 +22,7 @@ extension String {
     }
 
     public func stringSize(_ font : UIFont, constrainedToSize : CGSize) -> CGSize {
-        return NSString(string: self).boundingRect(with: constrainedToSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font : font], context: nil).size
+        return NSString(string: self).boundingRect(with: constrainedToSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : font], context: nil).size
     }
 }
 
@@ -35,17 +35,17 @@ public class UILabelPadding: UILabel {
     }
     
     public override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
-        let insetRect = UIEdgeInsetsInsetRect(bounds, padding)
+        let insetRect = bounds.inset(by: padding)
         let textRect = super.textRect(forBounds: insetRect, limitedToNumberOfLines: numberOfLines)
         let invertedInsets = UIEdgeInsets(top: -padding.top,
                                           left: -padding.left,
                                           bottom: -padding.bottom,
                                           right: -padding.right)
-        return UIEdgeInsetsInsetRect(textRect, invertedInsets)
+        return textRect.inset(by: invertedInsets)
     }
     
     public override func drawText(in rect: CGRect) {
-        super.drawText(in: UIEdgeInsetsInsetRect(rect, padding))
+        super.drawText(in: rect.inset(by: padding))
     }
 }
 
@@ -137,7 +137,7 @@ extension UIBarButtonItem {
         // Initialiaze Badge's label
         let label = CATextLayer()
         label.string = "\(number)"
-        label.alignmentMode = kCAAlignmentCenter
+        label.alignmentMode = CATextLayerAlignmentMode.center
         label.fontSize = 11
         label.frame = CGRect(origin: CGPoint(x: location.x - 4, y: offset.y), size: CGSize(width: 8, height: 16))
         label.foregroundColor = filled ? UIColor.white.cgColor : color.cgColor
