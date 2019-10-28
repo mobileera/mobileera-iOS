@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D05AA59C208C64F1002DC68C"
-               BuildableName = "Mobile Era.app"
-               BlueprintName = "Mobile Era"
-               ReferencedContainer = "container:Mobile Era.xcodeproj">
+               BuildableName = "MobileEra.app"
+               BlueprintName = "MobileEra"
+               ReferencedContainer = "container:MobileEra.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "D05AA5B2208C64F2002DC68C"
                BuildableName = "Mobile EraUITests.xctest"
                BlueprintName = "Mobile EraUITests"
-               ReferencedContainer = "container:Mobile Era.xcodeproj">
+               ReferencedContainer = "container:MobileEra.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D05AA59C208C64F1002DC68C"
-            BuildableName = "Mobile Era.app"
-            BlueprintName = "Mobile Era"
-            ReferencedContainer = "container:Mobile Era.xcodeproj">
+            BuildableName = "MobileEra.app"
+            BlueprintName = "MobileEra"
+            ReferencedContainer = "container:MobileEra.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D05AA59C208C64F1002DC68C"
-            BuildableName = "Mobile Era.app"
-            BlueprintName = "Mobile Era"
-            ReferencedContainer = "container:Mobile Era.xcodeproj">
+            BuildableName = "MobileEra.app"
+            BlueprintName = "MobileEra"
+            ReferencedContainer = "container:MobileEra.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D05AA59C208C64F1002DC68C"
-            BuildableName = "Mobile Era.app"
-            BlueprintName = "Mobile Era"
-            ReferencedContainer = "container:Mobile Era.xcodeproj">
+            BuildableName = "MobileEra.app"
+            BlueprintName = "MobileEra"
+            ReferencedContainer = "container:MobileEra.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
