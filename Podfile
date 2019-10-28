@@ -10,12 +10,4 @@ target 'Mobile Era' do
   pod 'Firebase/Database'
   pod 'GoogleMaps'
   pod 'Toaster'
-
-  # Pods for Mobile Era
-
-  target 'Mobile EraUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
