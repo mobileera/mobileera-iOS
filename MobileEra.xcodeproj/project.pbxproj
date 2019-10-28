@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD37A7689BF0AB25905510E0 /* Pods_MobileEra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0532B149C2E31C0DD37393 /* Pods_MobileEra.framework */; };
 		D00438E7208DBE0C00173602 /* SessionsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00438E6208DBE0C00173602 /* SessionsDetailsViewController.swift */; };
 		D00438EB208DC0E000173602 /* SessionsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00438E9208DC0E000173602 /* SessionsDetailsViewController.xib */; };
 		D04D2016208FB1DA005E5A7D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D2015208FB1DA005E5A7D /* Notification.swift */; };
@@ -45,18 +46,16 @@
 		D0DBBD6420B2E2BC0091FF21 /* InformationPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DBBD6320B2E2BC0091FF21 /* InformationPopupController.swift */; };
 		D0F51F95208D2725000E08AE /* SessionTableViewLegendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F51F93208D2725000E08AE /* SessionTableViewLegendCell.swift */; };
 		D0F51F96208D2725000E08AE /* SessionTableViewLegendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F51F94208D2725000E08AE /* SessionTableViewLegendCell.xib */; };
-		EE348BD855ADB94DF9978BD6 /* Pods_Mobile_Era.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B51499E1D9E20FB63D0E83 /* Pods_Mobile_Era.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9F859A51AD01FE780585565C /* Pods-Mobile Era.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Era.debug.xcconfig"; path = "Target Support Files/Pods-Mobile Era/Pods-Mobile Era.debug.xcconfig"; sourceTree = "<group>"; };
-		B3B51499E1D9E20FB63D0E83 /* Pods_Mobile_Era.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile_Era.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB0D5F2A0F1B9B6D1D818714 /* Pods-Mobile Era.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Era.release.xcconfig"; path = "Target Support Files/Pods-Mobile Era/Pods-Mobile Era.release.xcconfig"; sourceTree = "<group>"; };
+		0E4DA563717710BF3A646E9C /* Pods-MobileEra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileEra.release.xcconfig"; path = "Target Support Files/Pods-MobileEra/Pods-MobileEra.release.xcconfig"; sourceTree = "<group>"; };
+		4A0532B149C2E31C0DD37393 /* Pods_MobileEra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileEra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00438E6208DBE0C00173602 /* SessionsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsDetailsViewController.swift; sourceTree = "<group>"; };
 		D00438E9208DC0E000173602 /* SessionsDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionsDetailsViewController.xib; sourceTree = "<group>"; };
 		D04D2015208FB1DA005E5A7D /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		D05763ED208F0E2D0006AB73 /* FilterPopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPopupController.swift; sourceTree = "<group>"; };
-		D05AA59D208C64F1002DC68C /* Mobile Era.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Era.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D05AA59D208C64F1002DC68C /* MobileEra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileEra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05AA5A0208C64F1002DC68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D05AA5A2208C64F1002DC68C /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		D05AA5A4208C64F1002DC68C /* SpeakersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		D0DBBD6620B2EFC80091FF21 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Main.strings; sourceTree = "<group>"; };
 		D0F51F93208D2725000E08AE /* SessionTableViewLegendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewLegendCell.swift; sourceTree = "<group>"; };
 		D0F51F94208D2725000E08AE /* SessionTableViewLegendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableViewLegendCell.xib; sourceTree = "<group>"; };
+		EAF17DAD58B159A0E6250FE5 /* Pods-MobileEra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileEra.debug.xcconfig"; path = "Target Support Files/Pods-MobileEra/Pods-MobileEra.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,21 +103,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE348BD855ADB94DF9978BD6 /* Pods_Mobile_Era.framework in Frameworks */,
+				CD37A7689BF0AB25905510E0 /* Pods_MobileEra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9682218C57E9983B569EC9BC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B3B51499E1D9E20FB63D0E83 /* Pods_Mobile_Era.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		D04D2014208FB1CC005E5A7D /* Events */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,22 +121,22 @@
 		D05AA594208C64F1002DC68C = {
 			isa = PBXGroup;
 			children = (
-				D05AA59F208C64F1002DC68C /* Mobile Era */,
+				D05AA59F208C64F1002DC68C /* MobileEra */,
 				D05AA59E208C64F1002DC68C /* Products */,
 				EA2C9D6AD9CFF973AD25C8B9 /* Pods */,
-				9682218C57E9983B569EC9BC /* Frameworks */,
+				D9BFC5F3CACEEBA388C0438C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		D05AA59E208C64F1002DC68C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D05AA59D208C64F1002DC68C /* Mobile Era.app */,
+				D05AA59D208C64F1002DC68C /* MobileEra.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D05AA59F208C64F1002DC68C /* Mobile Era */ = {
+		D05AA59F208C64F1002DC68C /* MobileEra */ = {
 			isa = PBXGroup;
 			children = (
 				D0D5B6BD20A74F9000163B45 /* DataManagers */,
@@ -173,7 +165,7 @@
 				D0A59F5220AAD79D0011173F /* InfoPlist.strings */,
 				D05AA5E7208C8859002DC68C /* Utils.swift */,
 			);
-			path = "Mobile Era";
+			path = MobileEra;
 			sourceTree = "<group>";
 		};
 		D05AA5D3208C8137002DC68C /* Datasources */ = {
@@ -222,38 +214,45 @@
 			path = DataManagers;
 			sourceTree = "<group>";
 		};
+		D9BFC5F3CACEEBA388C0438C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A0532B149C2E31C0DD37393 /* Pods_MobileEra.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EA2C9D6AD9CFF973AD25C8B9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9F859A51AD01FE780585565C /* Pods-Mobile Era.debug.xcconfig */,
-				CB0D5F2A0F1B9B6D1D818714 /* Pods-Mobile Era.release.xcconfig */,
+				EAF17DAD58B159A0E6250FE5 /* Pods-MobileEra.debug.xcconfig */,
+				0E4DA563717710BF3A646E9C /* Pods-MobileEra.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D05AA59C208C64F1002DC68C /* Mobile Era */ = {
+		D05AA59C208C64F1002DC68C /* MobileEra */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D05AA5BC208C64F2002DC68C /* Build configuration list for PBXNativeTarget "Mobile Era" */;
+			buildConfigurationList = D05AA5BC208C64F2002DC68C /* Build configuration list for PBXNativeTarget "MobileEra" */;
 			buildPhases = (
-				5AE8C46691C080AA40132FB3 /* [CP] Check Pods Manifest.lock */,
+				BDE71C1819E8DA9DC05296A5 /* [CP] Check Pods Manifest.lock */,
 				D05AA5CD208C7A5F002DC68C /* ShellScript */,
 				D05AA599208C64F1002DC68C /* Sources */,
 				D05AA59A208C64F1002DC68C /* Frameworks */,
 				D05AA59B208C64F1002DC68C /* Resources */,
-				2F71376F4BD95D5907677378 /* [CP] Embed Pods Frameworks */,
-				7EAFD389953D45B96DF9AFF7 /* [CP] Copy Pods Resources */,
+				53FB7711E86CE4A9B9EC7339 /* [CP] Embed Pods Frameworks */,
+				5B35BFDB9135CBBD80DD2AB9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Mobile Era";
+			name = MobileEra;
 			productName = "Mobile Era";
-			productReference = D05AA59D208C64F1002DC68C /* Mobile Era.app */;
+			productReference = D05AA59D208C64F1002DC68C /* MobileEra.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -272,7 +271,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D05AA598208C64F1002DC68C /* Build configuration list for PBXProject "Mobile Era" */;
+			buildConfigurationList = D05AA598208C64F1002DC68C /* Build configuration list for PBXProject "MobileEra" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -286,7 +285,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D05AA59C208C64F1002DC68C /* Mobile Era */,
+				D05AA59C208C64F1002DC68C /* MobileEra */,
 			);
 		};
 /* End PBXProject section */
@@ -314,24 +313,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2F71376F4BD95D5907677378 /* [CP] Embed Pods Frameworks */ = {
+		53FB7711E86CE4A9B9EC7339 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mobile Era/Pods-Mobile Era-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mobile Era/Pods-Mobile Era-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobile Era/Pods-Mobile Era-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5AE8C46691C080AA40132FB3 /* [CP] Check Pods Manifest.lock */ = {
+		5B35BFDB9135CBBD80DD2AB9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDE71C1819E8DA9DC05296A5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -346,28 +362,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Mobile Era-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MobileEra-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7EAFD389953D45B96DF9AFF7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mobile Era/Pods-Mobile Era-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mobile Era/Pods-Mobile Era-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobile Era/Pods-Mobile Era-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D05AA5CD208C7A5F002DC68C /* ShellScript */ = {
@@ -379,7 +378,7 @@
 				"$TEMP_DIR/rswift-lastrun",
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -581,13 +580,13 @@
 		};
 		D05AA5BD208C64F2002DC68C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F859A51AD01FE780585565C /* Pods-Mobile Era.debug.xcconfig */;
+			baseConfigurationReference = EAF17DAD58B159A0E6250FE5 /* Pods-MobileEra.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 747P4M9HQU;
-				INFOPLIST_FILE = "Mobile Era/Info.plist";
+				INFOPLIST_FILE = MobileEra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,13 +601,13 @@
 		};
 		D05AA5BE208C64F2002DC68C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB0D5F2A0F1B9B6D1D818714 /* Pods-Mobile Era.release.xcconfig */;
+			baseConfigurationReference = 0E4DA563717710BF3A646E9C /* Pods-MobileEra.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 747P4M9HQU;
-				INFOPLIST_FILE = "Mobile Era/Info.plist";
+				INFOPLIST_FILE = MobileEra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -624,7 +623,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D05AA598208C64F1002DC68C /* Build configuration list for PBXProject "Mobile Era" */ = {
+		D05AA598208C64F1002DC68C /* Build configuration list for PBXProject "MobileEra" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D05AA5BA208C64F2002DC68C /* Debug */,
@@ -633,7 +632,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D05AA5BC208C64F2002DC68C /* Build configuration list for PBXNativeTarget "Mobile Era" */ = {
+		D05AA5BC208C64F2002DC68C /* Build configuration list for PBXNativeTarget "MobileEra" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D05AA5BD208C64F2002DC68C /* Debug */,

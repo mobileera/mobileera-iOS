@@ -1,0 +1,6 @@
+framework module Pods_MobileEra {
+  umbrella header "Pods-MobileEra-umbrella.h"
+
+  export *
+  module * { export * }
+}

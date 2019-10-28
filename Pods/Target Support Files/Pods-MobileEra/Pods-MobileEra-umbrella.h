@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Mobile_EraVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Mobile_EraVersionString[];
+FOUNDATION_EXPORT double Pods_MobileEraVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_MobileEraVersionString[];
 
