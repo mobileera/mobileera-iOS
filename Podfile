@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'Mobile Era' do
+target 'MobileEra' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   pod 'SDWebImage'
@@ -10,12 +10,4 @@ target 'Mobile Era' do
   pod 'Firebase/Database'
   pod 'GoogleMaps'
   pod 'Toaster'
-
-  # Pods for Mobile Era
-
-  target 'Mobile EraUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
