@@ -558,7 +558,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 13 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 10 localization keys.
     struct localizable {
       /// en translation: Can't send an email
       ///
@@ -572,14 +572,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, nb
       static let contact_us = Rswift.StringResource(key: "contact_us", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
-      /// en translation: Developed with ❤️
-      ///
-      /// Locales: en, nb
-      static let copirights = Rswift.StringResource(key: "copirights", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
-      /// en translation: Konstantin Loginov (%@)
-      ///
-      /// Locales: en, nb
-      static let developer = Rswift.StringResource(key: "developer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
       /// en translation: Mobile Era Team
       ///
       /// Locales: en, nb
@@ -608,10 +600,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, nb
       static let venue = Rswift.StringResource(key: "venue", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
-      /// en translation: loginov.k@gmail.com
-      ///
-      /// Locales: en, nb
-      static let developers_email = Rswift.StringResource(key: "developers_email", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
 
       /// en translation: Can't send an email
       ///
@@ -656,38 +644,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("contact_us", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Developed with ❤️
-      ///
-      /// Locales: en, nb
-      static func copirights(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("copirights", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "copirights"
-        }
-
-        return NSLocalizedString("copirights", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Konstantin Loginov (%@)
-      ///
-      /// Locales: en, nb
-      static func developer(_ value1: String, preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          let format = NSLocalizedString("developer", bundle: hostingBundle, comment: "")
-          return String(format: format, locale: applicationLocale, value1)
-        }
-
-        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "developer"
-        }
-
-        let format = NSLocalizedString("developer", bundle: bundle, comment: "")
-        return String(format: format, locale: locale, value1)
       }
 
       /// en translation: Mobile Era Team
@@ -793,21 +749,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("venue", bundle: bundle, comment: "")
-      }
-
-      /// en translation: loginov.k@gmail.com
-      ///
-      /// Locales: en, nb
-      static func developers_email(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("developers_email", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "developers_email"
-        }
-
-        return NSLocalizedString("developers_email", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
