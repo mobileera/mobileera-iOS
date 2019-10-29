@@ -14,10 +14,7 @@ class InformationPopupController: UIViewController, UITextViewDelegate, MFMailCo
     @IBOutlet weak var lblCodeOfConduct: UITextView!
     @IBOutlet weak var lblTeam: UITextView!
     @IBOutlet weak var lblContactUs: UITextView!
-    
-    @IBOutlet weak var lblCopyrights: UILabel!
-    @IBOutlet weak var lblDeveloper: UITextView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         viewContainer.layer.cornerRadius = 8
@@ -55,16 +52,6 @@ class InformationPopupController: UIViewController, UITextViewDelegate, MFMailCo
                                   .font: UIFont.systemFont(ofSize: 16, weight: .medium)], range: NSRange(location: 0, length: contactUsString.length))
         lblContactUs.attributedText = contactUsString
         lblContactUs.delegate = self
-        
-        lblCopyrights.text = R.string.localizable.copirights()
-
-        let developerString = NSMutableAttributedString(string: R.string.localizable.developer(R.string.localizable.developers_email()))
-        developerString.addAttributes([.link: R.string.localizable.developers_email(),
-                                  .paragraphStyle: paragraphStyle,
-                                  .font: UIFont.systemFont(ofSize: 12, weight: .medium)], range: NSRange(location: 0, length: developerString.length))
-        lblDeveloper.attributedText = developerString
-        lblDeveloper.delegate = self
-        
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
