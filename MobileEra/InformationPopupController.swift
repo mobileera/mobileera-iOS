@@ -37,13 +37,13 @@ class InformationPopupController: UIViewController, UITextViewDelegate, MFMailCo
         lblSponsors.delegate = self
         
         let codeOfConductString = NSMutableAttributedString(string: R.string.localizable.codeofconduct())
-        codeOfConductString.addAttributes([.link: "https://2017.mobileera.rocks/cod/", // we still don't have COD in 2018th 
+        codeOfConductString.addAttributes([.link: "https://mobileera.rocks/cod",
                                       .paragraphStyle: paragraphStyle,
                                       .font: UIFont.systemFont(ofSize: 16, weight: .medium)], range: NSRange(location: 0, length: codeOfConductString.length))
         lblCodeOfConduct.attributedText = codeOfConductString
         
         let teamString = NSMutableAttributedString(string: R.string.localizable.mobileera_team())
-        teamString.addAttributes([.link: "https://2018.mobileera.rocks/team/",
+        teamString.addAttributes([.link: "https://mobileera.rocks/team",
                                            .paragraphStyle: paragraphStyle,
                                            .font: UIFont.systemFont(ofSize: 16, weight: .medium)], range: NSRange(location: 0, length: teamString.length))
         lblTeam.attributedText = teamString
@@ -55,7 +55,6 @@ class InformationPopupController: UIViewController, UITextViewDelegate, MFMailCo
                                   .font: UIFont.systemFont(ofSize: 16, weight: .medium)], range: NSRange(location: 0, length: contactUsString.length))
         lblContactUs.attributedText = contactUsString
         lblContactUs.delegate = self
-
         
         lblCopyrights.text = R.string.localizable.copirights()
 
