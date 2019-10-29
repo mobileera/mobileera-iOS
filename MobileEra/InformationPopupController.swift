@@ -1,11 +1,3 @@
-//
-//  InformationPopupController.swift
-//  Mobile Era
-//
-//  Created by Konstantin Loginov on 21/05/2018.
-//  Copyright © 2018 FotMob. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import Toaster

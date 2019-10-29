@@ -1,11 +1,3 @@
-//
-//  SettingsDataManager.swift
-//  Mobile Era
-//
-//  Created by Konstantin Loginov on 12/05/2018.
-//  Copyright © 2018 FotMob. All rights reserved.
-//
-
 import Foundation
 
 public class SettingsDataManager {
