@@ -246,7 +246,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 21 images.
+  /// This `R.image` struct is generated, and contains static references to 20 images.
   struct image {
     /// Image `Add to calendar`.
     static let addToCalendar = Rswift.ImageResource(bundle: R.hostingBundle, name: "Add to calendar")
@@ -268,8 +268,6 @@ struct R: Rswift.Validatable {
     static let github = Rswift.ImageResource(bundle: R.hostingBundle, name: "github")
     /// Image `info`.
     static let info = Rswift.ImageResource(bundle: R.hostingBundle, name: "info")
-    /// Image `logo-white`.
-    static let logoWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo-white")
     /// Image `logo`.
     static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo")
     /// Image `map`.
@@ -365,13 +363,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "logo", bundle: ..., traitCollection: ...)`
     static func logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.logo, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "logo-white", bundle: ..., traitCollection: ...)`
-    static func logoWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.logoWhite, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1335,7 +1326,6 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo-white", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo-white' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Primary Color", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary Color' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         }
