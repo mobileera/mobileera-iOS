@@ -1,7 +1,6 @@
 import UIKit
 import Foundation
 import Firebase
-import FirebaseDatabase
 
 extension Decodable {
     /// Initialize from JSON Dictionary. Return nil on failure
@@ -19,15 +18,18 @@ class SpeakersViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var database: DatabaseReference!
+    var database: Firestore!
     
     private var speakersSource: SpeakersSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        database = Database.database().reference()
-        database.keepSynced(true)
-        
+
+        let settings = FirestoreSettings()
+        settings.isPersistenceEnabled = true
+        database = Firestore.firestore()
+        database.settings = settings
+
         title = R.string.localizable.speakers()
         
         speakersSource = SpeakersSource(self, speakers: [])
@@ -40,19 +42,19 @@ class SpeakersViewController: BaseViewController {
     }
     
     private func loadData() {
-        database.observe(.value) { [weak self] (snapshot) in
-            guard
-                let speakersSnapshot = snapshot.childSnapshot(forPath: "speakers").value,
-                JSONSerialization.isValidJSONObject(speakersSnapshot),
-                let speakersData = try? JSONSerialization.data(withJSONObject: speakersSnapshot, options: []),
-                let speakersDictionary = try? JSONDecoder().decode([String : Speaker].self, from: speakersData) else { return }
-
-            for speaker in speakersDictionary {
-                speaker.value.id = speaker.key
+        database.collection("speakers").getDocuments { speakersQuerySnapshot, speakersError in
+            let speakersDocuments = speakersQuerySnapshot?.documents ?? [QueryDocumentSnapshot]()
+            var speakers = [Speaker]()
+            for speakerDocument in speakersDocuments {
+                guard let speakerData = try? JSONSerialization.data(withJSONObject: speakerDocument.data(), options: []) else { fatalError() }
+                if let speaker = try? JSONDecoder().decode(Speaker.self, from: speakerData) {
+                    speaker.id = speakerDocument.documentID
+                    speakers.append(speaker)
+                }
             }
-            
-            self?.speakersSource?.setData(Array(speakersDictionary.values))
-            self?.tableView.reloadData()
+
+            self.speakersSource?.setData(speakers)
+            self.tableView.reloadData()
         }
     }
 }

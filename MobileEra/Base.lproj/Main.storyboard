@@ -115,6 +115,7 @@
                                 <constraints>
                                     <constraint firstItem="coJ-xJ-N2j" firstAttribute="height" secondItem="PoO-Zq-gr7" secondAttribute="height" constant="20" id="1ax-p2-JHG"/>
                                     <constraint firstItem="fEb-eA-MFL" firstAttribute="centerX" secondItem="o5b-hj-vyY" secondAttribute="centerX" id="2Pv-qo-1nE"/>
+                                    <constraint firstItem="CbF-6h-ULe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Td-dq-aXb" secondAttribute="trailing" id="2YE-7d-XZm"/>
                                     <constraint firstItem="fEb-eA-MFL" firstAttribute="top" secondItem="o5b-hj-vyY" secondAttribute="top" constant="15" id="5iT-xg-wq7"/>
                                     <constraint firstAttribute="trailing" secondItem="PoO-Zq-gr7" secondAttribute="trailing" constant="15" id="6fU-Iq-MIc"/>
                                     <constraint firstItem="PoO-Zq-gr7" firstAttribute="leading" secondItem="atT-vf-V2k" secondAttribute="trailing" constant="8" id="8qd-Yp-Kzu"/>
@@ -132,6 +133,7 @@
                                     <constraint firstItem="coJ-xJ-N2j" firstAttribute="width" secondItem="o5b-hj-vyY" secondAttribute="width" id="Xrh-av-jM0"/>
                                     <constraint firstItem="fVb-ok-Afs" firstAttribute="width" secondItem="o5b-hj-vyY" secondAttribute="width" id="YbY-uh-28J"/>
                                     <constraint firstAttribute="bottom" secondItem="NNc-Zn-Xv6" secondAttribute="bottom" id="bE0-84-KXZ"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lnS-x9-ix0" secondAttribute="trailing" constant="20" symbolic="YES" id="cyW-o0-2yK"/>
                                     <constraint firstItem="coJ-xJ-N2j" firstAttribute="centerY" secondItem="PoO-Zq-gr7" secondAttribute="centerY" id="dyy-TI-yMW"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="440" id="fs9-tb-CCo"/>
                                     <constraint firstAttribute="bottom" secondItem="6Td-dq-aXb" secondAttribute="bottom" id="jDv-SW-6b5"/>
@@ -181,10 +183,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="MId-ea-rl5">
-                                <rect key="frame" x="15" y="58" width="290" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MId-ea-rl5">
+                                <rect key="frame" x="15" y="52" width="290" height="32"/>
                                 <segments>
-                                    <segment title="Workshops"/>
                                     <segment title="Day 1"/>
                                     <segment title="Day 2"/>
                                 </segments>
@@ -194,7 +195,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rdF-8P-lgt">
-                                <rect key="frame" x="0.0" y="97" width="320" height="334"/>
+                                <rect key="frame" x="0.0" y="91" width="320" height="340"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -207,7 +208,6 @@
                             <constraint firstAttribute="leading" secondItem="MId-ea-rl5" secondAttribute="leading" constant="-15" id="dZB-hw-fDP"/>
                             <constraint firstItem="YxW-bV-138" firstAttribute="top" secondItem="rdF-8P-lgt" secondAttribute="bottom" id="mgX-G9-Syl"/>
                             <constraint firstItem="rdF-8P-lgt" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="pv0-cB-K7d"/>
-                            <constraint firstItem="MId-ea-rl5" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="qfD-Xb-dEc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Schedule" image="schedule" id="acW-dT-cKf"/>
@@ -234,7 +234,7 @@
                 <navigationController id="UbI-Pv-h0d" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="schedule" id="Fu3-UA-VeG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LF8-8b-umT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="Primary Color"/>
                     </navigationBar>
@@ -259,7 +259,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uRu-um-d8t">
-                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="381"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -479,7 +479,7 @@
                 <navigationController id="aR1-I7-Mb9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Speakers" image="speaker" id="Fj7-XZ-KvS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5wy-bc-29X">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="Primary Color"/>
                     </navigationBar>
@@ -497,7 +497,7 @@
                 <navigationController id="aDP-Rn-Ekl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Venue" image="map" id="XAc-3Z-TET"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nwe-R4-Lfu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="Primary Color"/>
                     </navigationBar>
@@ -522,7 +522,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74R-om-GTk">
-                                <rect key="frame" x="0.0" y="50" width="320" height="381"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="NuW-pH-VCb">
                                         <rect key="frame" x="15" y="0.0" width="290" height="599"/>
@@ -678,6 +678,6 @@ Holmens gate 3
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XvM-ux-KWj"/>
+        <segue reference="UYq-Qr-dqg"/>
     </inferredMetricsTieBreakers>
 </document>

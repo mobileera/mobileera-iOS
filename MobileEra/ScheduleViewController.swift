@@ -1,6 +1,5 @@
 import UIKit
 import Firebase
-import FirebaseDatabase
 
 class ScheduleViewController: BaseViewController {
     @IBAction func onSegmentControlValueChanged(_ sender: Any) {
@@ -14,13 +13,16 @@ class ScheduleViewController: BaseViewController {
     private var filterBtn: UIBarButtonItem?
     private var scheduleSource: ScheduleSource?
     
-    var database: DatabaseReference!
+    var database: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        database = Database.database().reference()
-        database.keepSynced(true)
-        
+
+        let settings = FirestoreSettings()
+        settings.isPersistenceEnabled = true
+        database = Firestore.firestore()
+        database.settings = settings
+
         title = R.string.localizable.schedule()
         
         scheduleSource = ScheduleSource(self, selectedDay: daySegmentControl.selectedSegmentIndex)
@@ -96,89 +98,85 @@ class ScheduleViewController: BaseViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        
-        database.observe(.value) { [weak self] (snapshot) in
-            
-            guard
-                let speakersSnapshot = snapshot.childSnapshot(forPath: "speakers").value,
-                let sessionsSnapshot = snapshot.childSnapshot(forPath: "sessions").value,
-                let scheduleSnapshot = snapshot.childSnapshot(forPath: "schedule").value,
-                
-                JSONSerialization.isValidJSONObject(speakersSnapshot),
-                JSONSerialization.isValidJSONObject(sessionsSnapshot),
-                JSONSerialization.isValidJSONObject(scheduleSnapshot),
-                
-                let speakersData = try? JSONSerialization.data(withJSONObject: speakersSnapshot, options: []),
-                let sessionsData = try? JSONSerialization.data(withJSONObject: sessionsSnapshot, options: []),
-                let schedulesData = try? JSONSerialization.data(withJSONObject: scheduleSnapshot, options: []),
-                
-                let speakersDictionary = try? JSONDecoder().decode([String : Speaker].self, from: speakersData),
-                let sessionsDictionary = try? JSONDecoder().decode([String: Session].self, from: sessionsData),
-                let scheduleDictionary = try? JSONDecoder().decode([String: Day].self, from: schedulesData)
-                
-                else {
-                    print("Error parsing data from Firebase")
-                    return
-            }
-            
-            for speaker in speakersDictionary {
-                speaker.value.id = speaker.key
-            }
-            
-            for session in sessionsDictionary {
-                session.value.id = Int(session.key)
-            }
-            
-            for day in scheduleDictionary {
-                day.value.date = day.key
-            }
-            
-            let speakers = Array(speakersDictionary.values)
-            let sessions = Array(sessionsDictionary.values)
-            var schedule = Array(scheduleDictionary.values)
-            schedule.sort(by: { (d1, d2) -> Bool in
-                if let d1Date = d1.date, let d2Date = d2.date {
-                    return d1Date < d2Date
+
+        database.collection("speakers").getDocuments { speakersQuerySnapshot, speakersError in
+            let speakersDocuments = speakersQuerySnapshot?.documents ?? [QueryDocumentSnapshot]()
+            var speakers = [Speaker]()
+            for speakerDocument in speakersDocuments {
+                guard let speakerData = try? JSONSerialization.data(withJSONObject: speakerDocument.data(), options: []) else { fatalError() }
+                if let speaker = try? JSONDecoder().decode(Speaker.self, from: speakerData) {
+                    speaker.id = speakerDocument.documentID
+                    speakers.append(speaker)
                 }
-                
-                return false
-            })
-            
-            var allTags: Set<String> = []
-            for session in sessions {
-                var joinedSpeakerList: [Speaker] = []
-                
-                session.speakers?.forEach({ (id) in
-                    if let joinedSpeaker = speakers.first(where: {$0.id == id}) {
-                        joinedSpeakerList.append(joinedSpeaker)
-                    }
-                })
-                
-                session.speakersList = joinedSpeakerList
-                session.tags?.forEach({allTags.insert($0)})
             }
-            
-            for day in schedule {
-                for timeslot in day.timeslots {
-                    var joinedSessionsList: [Session] = []
-                    for id in timeslot.sessions.map({$0.items.first}) {
-                        if let joinedSession = sessions.first(where: {$0.id == id}),
-                            let date = day.date {
-                            joinedSession.startDate = dateFormatter.date(from: date + "T" + timeslot.startTime)
-                            joinedSession.endDate = dateFormatter.date(from: date + "T" + timeslot.endTime)
-                            joinedSessionsList.append(joinedSession)
+
+            self.database.collection("sessions").getDocuments() { sessionsQuerySnapshot, sessionsError in
+                let sessionsDocuments = sessionsQuerySnapshot?.documents ?? [QueryDocumentSnapshot]()
+                var sessions = [Session]()
+                for sessionDocument in sessionsDocuments {
+                    guard let sessionData = try? JSONSerialization.data(withJSONObject: sessionDocument.data(), options: []) else { fatalError() }
+                    if let session = try? JSONDecoder().decode(Session.self, from: sessionData) {
+                        session.id = Int(sessionDocument.documentID)
+                        sessions.append(session)
+                    }
+                }
+
+                self.database.collection("schedule").getDocuments() { schedulesQuerySnapshot, sessionsError in
+                    let schedulesDocuments = schedulesQuerySnapshot?.documents ?? [QueryDocumentSnapshot]()
+                    var schedules = [Day]()
+                    for scheduleDocument in schedulesDocuments {
+                        guard let scheduleData = try? JSONSerialization.data(withJSONObject: scheduleDocument.data(), options: []) else { fatalError() }
+                        if let schedule = try? JSONDecoder().decode(Day.self, from: scheduleData) {
+                            schedule.date = scheduleDocument.documentID
+                            schedules.append(schedule)
                         }
                     }
-                    
-                    timeslot.sessionsList = joinedSessionsList
+
+                    schedules.sort(by: { (d1, d2) -> Bool in
+                        if let d1Date = d1.date, let d2Date = d2.date {
+                            return d1Date < d2Date
+                        }
+
+                        return false
+                    })
+
+                    var allTags: Set<String> = []
+                    for session in sessions {
+                        var joinedSpeakerList: [Speaker] = []
+
+                        session.speakers?.forEach({ (id) in
+                            if let joinedSpeaker = speakers.first(where: {$0.id == id}) {
+                                joinedSpeakerList.append(joinedSpeaker)
+                            }
+                        })
+
+                        session.speakersList = joinedSpeakerList
+                        session.tags?.forEach({allTags.insert($0)})
+                    }
+
+                    for day in schedules {
+                        for timeslot in day.timeslots {
+                            var joinedSessionsList: [Session] = []
+                            for id in timeslot.sessions.map({$0.items.first}) {
+                                if let joinedSession = sessions.first(where: {$0.id == id}),
+                                    let date = day.date {
+                                    joinedSession.startDate = dateFormatter.date(from: date + "T" + timeslot.startTime)
+                                    joinedSession.endDate = dateFormatter.date(from: date + "T" + timeslot.endTime)
+                                    joinedSessionsList.append(joinedSession)
+                                }
+                            }
+
+                            timeslot.sessionsList = joinedSessionsList
+                        }
+                    }
+
+                    let manager = SettingsDataManager.instance
+                    manager.allTags = Array(allTags)
+
+                    self.scheduleSource?.setData(allSessions: sessions, schedule: schedules)
+                    self.tableView.reloadData()
                 }
             }
-            
-            let manager = SettingsDataManager.instance
-            manager.allTags = Array(allTags)
-            
-            self?.scheduleSource?.setData(allSessions: sessions, schedule: schedule)
-            self?.tableView.reloadData()
         }
     }
 }
