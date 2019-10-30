@@ -15,6 +15,13 @@ class ScheduleViewController: BaseViewController {
         return tableView
     }()
 
+    lazy var locationsView: LocationsView = {
+        let locationsView = LocationsView()
+        locationsView.translatesAutoresizingMaskIntoConstraints = false
+        locationsView.delegate = self
+        return locationsView
+    }()
+
     private var filterBtn: UIBarButtonItem?
     private var scheduleSource: ScheduleSource?
     
@@ -32,8 +39,13 @@ class ScheduleViewController: BaseViewController {
         
         scheduleSource = ScheduleSource(self, selectedDay: 0)
         view.addSubview(tableView)
+        view.addSubview(locationsView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            locationsView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            locationsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            locationsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+
+            tableView.topAnchor.constraint(equalTo: locationsView.bottomAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
@@ -49,23 +61,11 @@ class ScheduleViewController: BaseViewController {
         navigationItem.titleView = customSegmentedControl
 
         loadData()
-
-        updateFilterBadgeCount()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableView.reloadData()
-    }
-
-    private let BADGE_TAG = 24042018
-
-    public func updateFilterBadgeCount() {
-        guard let badge = (filterBtn?.customView?.subviews.first(where: {$0.tag == BADGE_TAG}) as? UILabel) else { return }
-        
-        let badgeCount = SettingsDataManager.instance.selectedTags.count + (SettingsDataManager.instance.showOnlyFavorite ? 1 : 0)
-        badge.text = badgeCount.description
-        badge.isHidden = badgeCount == 0
     }
 
     private func loadData() {
@@ -159,5 +159,19 @@ extension ScheduleViewController: CustomSegmentedControlDelegate {
     func customSegmentedControl(_ customSegmentedControl: CustomSegmentedControl, didSelectDayAtIndex index: Int) {
         scheduleSource?.setSelectedDay(index)
         tableView.reloadData()
+    }
+}
+
+extension ScheduleViewController: LocationsViewDelegate {
+    func locationsView(_ locationsView: LocationsView, didSelectFelix1 isSelected: Bool) {
+        
+    }
+
+    func locationsView(_ locationsView: LocationsView, didSelectFelix2 isSelected: Bool) {
+
+    }
+
+    func locationsView(_ locationsView: LocationsView, didSelectLancing isSelected: Bool) {
+
     }
 }

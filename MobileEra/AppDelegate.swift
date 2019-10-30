@@ -11,6 +11,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         GMSServices.provideAPIKey("AIzaSyBsjUHSxEaVtIS90m7h8E030QmTo-U0c0Y")
 
+        UINavigationBar.appearance().barTintColor = .white
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()

@@ -53,6 +53,9 @@ class ScheduleSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     public var allSessions: [Session] = []
     public var schedule: [Day] = []
     public var selectedDay: Int
+    var isFelix1Selected = false
+    var isFelix2Selected = false
+    var isLancingSelected = false
 
     public init (_ vc: UIViewController, selectedDay: Int) {
         self.vc = vc
@@ -65,6 +68,21 @@ class ScheduleSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         doFilter()
     }
 
+    public func setSelectedFelix1(_ isSelected: Bool) {
+        isFelix1Selected = isSelected
+        doFilter()
+    }
+
+    public func setSelectedFelix2(_ isSelected: Bool) {
+        isFelix2Selected = isSelected
+        doFilter()
+    }
+
+    public func setSelectedLancing(_ isSelected: Bool) {
+        isLancingSelected = isSelected
+        doFilter()
+    }
+
     public func setData(allSessions: [Session], schedule: [Day]) {
         self.allSessions = allSessions
         self.schedule = schedule
@@ -74,10 +92,15 @@ class ScheduleSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 
     public func doFilter() {
         data = []
-        
+
         if let day = schedule[safe: selectedDay] {
             for timeslot in day.timeslots {
-                data.append(Timeslot(startTime: timeslot.startTime, endTime: timeslot.endTime, sessionsList: timeslot.sessionsList?.filter({isMatchingFilter($0)})))
+                let sessions = timeslot.sessionsList?.filter { isMatchingFilter($0) }
+                let timeslot = Timeslot(
+                    startTime: timeslot.startTime,
+                    endTime: timeslot.endTime,
+                    sessionsList: sessions)
+                data.append(timeslot)
             }
         }
     }
@@ -87,12 +110,14 @@ class ScheduleSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         if showOnlyFavorite && !session.isFavorite {
             return false
         }
-        
+
         let selectedTags = SettingsDataManager.instance.selectedTags
         if !selectedTags.isEmpty {
             return session.tags?.contains(where: {selectedTags.contains($0)}) ?? false
-        }
-        
+        }        
+
+        // If the session belongs to the venue show
+
         return true
     }
 }
