@@ -24,8 +24,12 @@ class SpeakersViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let settings = FirestoreSettings()
+        settings.isPersistenceEnabled = true
         database = Firestore.firestore()
-        
+        database.settings = settings
+
         title = R.string.localizable.speakers()
         
         speakersSource = SpeakersSource(self, speakers: [])
