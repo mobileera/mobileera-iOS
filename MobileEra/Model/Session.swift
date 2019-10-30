@@ -28,8 +28,8 @@ class Session: Codable {
     }
     
     var isSystemAnnounce: Bool {
-        guard let id = id else { return false }
-        return id < 99
+        let count = speakers?.count ?? 0
+        return count == 0
     }
     
     var isFavorite: Bool {

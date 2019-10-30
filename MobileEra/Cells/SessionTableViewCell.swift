@@ -39,12 +39,13 @@ class SessionTableViewCell: UICustomTableViewCell {
 
     public func set(session: Session?, track: Int) {
         self.session = session
-        
-        selectionStyle = session?.isSystemAnnounce == true ? .none : .default
+        guard let session = session else { return }
+
+        selectionStyle = session.isSystemAnnounce == true ? .none : .default
 
         var trackName: String = ""
         colorBarView.layer.backgroundColor = UIColor.clear.cgColor
-        if session?.isSystemAnnounce == false && session?.isWorkshop == false {
+        if session.isSystemAnnounce == false && session.isWorkshop == false {
             if track == 0 {
                 colorBarView.layer.backgroundColor = R.color.odinColor()?.cgColor
                 trackName = "| Odin"
@@ -61,44 +62,43 @@ class SessionTableViewCell: UICustomTableViewCell {
         
         separatorHeight.constant = 0.5
         lblTitle.text = ""
-        if let session = session {
-            let text = session.title + (session.lightning == true ? " ⚡" : "")
-            let attributedText = NSMutableAttributedString (string: text)
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineSpacing = 2
-            attributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange (location: 0, length: attributedText.length))
-            lblTitle.attributedText = attributedText
-        }
+
+        let text = session.title + (session.lightning == true ? " ⚡" : "")
+        let attributedText = NSMutableAttributedString (string: text)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 2
+        attributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange (location: 0, length: attributedText.length))
+        lblTitle.attributedText = attributedText
+
+        lblSpeaker.text = (session.speakersList?.map({$0.name}).joined(separator: ", "))
         
-        lblSpeaker.text = (session?.speakersList?.map({$0.name}).joined(separator: ", "))
-        
-        if let speakersCount = session?.speakers?.count, speakersCount > 1 {
+        if let speakersCount = session.speakers?.count, speakersCount > 1 {
             lblExtraAvatarsCount.isHidden = false
             lblExtraAvatarsCount.text = "+" + (speakersCount - 1).description
         } else {
             lblExtraAvatarsCount.isHidden = true
         }
         
-        btnStar.isHidden = session?.isSystemAnnounce == true
-        btnStar.setImage(session?.isFavorite == true ? R.image.star_filled() : R.image.star(), for: .normal)
+        btnStar.isHidden = session.isSystemAnnounce == true
+        btnStar.setImage(session.isFavorite == true ? R.image.star_filled() : R.image.star(), for: .normal)
         
-        if let photoUrl = session?.speakersList?.first?.photoUrl, let url = URL(string: AppDelegate.domain + photoUrl) {
+        if let photoUrl = session.speakersList?.first?.photoUrl, let url = URL(string: AppDelegate.domain + photoUrl) {
             imgAvatar.sd_setImage(with: url, completed: nil)
-        } else if let sessionUrl = session?.image, let url = URL(string: AppDelegate.domain + sessionUrl) {
+        } else if let sessionUrl = session.image, let url = URL(string: AppDelegate.domain + sessionUrl) {
             imgAvatar.sd_setImage(with: url, completed: nil)
         } else {
             imgAvatar.image = nil
         }
         
         tagsStackView.subviews.forEach({$0.removeFromSuperview()})
-        if let tags = session?.tags {
+        if let tags = session.tags {
             for tag in tags {
                 let tagView = Tag.createTag(label: tag)
                 tagsStackView.addArrangedSubview(tagView)
             }
         }
         
-        let hasFooter = session?.tags?.isEmpty == false || session?.isSystemAnnounce == false
+        let hasFooter = session.tags?.isEmpty == false || session.isSystemAnnounce == false
         
         bottomAvatarConstraint.constant = hasFooter ? 36 : 8
         bottomSpeakerConstraint.constant = hasFooter ? 36 : 8
