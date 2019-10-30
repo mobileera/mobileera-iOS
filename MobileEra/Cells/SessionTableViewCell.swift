@@ -47,14 +47,14 @@ class SessionTableViewCell: UICustomTableViewCell {
         colorBarView.layer.backgroundColor = UIColor.clear.cgColor
         if session.isSystemAnnounce == false && session.isWorkshop == false {
             if track == 0 {
-                colorBarView.layer.backgroundColor = R.color.odinColor()?.cgColor
-                trackName = "| Odin"
+                colorBarView.layer.backgroundColor = R.color.felix1Color()?.cgColor
+                trackName = "| Felix 1"
             } else if track == 1 {
-                colorBarView.layer.backgroundColor = R.color.freyjaColor()?.cgColor
-                trackName = "| Freyja"
+                colorBarView.layer.backgroundColor = R.color.felix2Color()?.cgColor
+                trackName = "| Felix 2"
             } else if track == 2 {
-                colorBarView.layer.backgroundColor = R.color.thorColor()?.cgColor
-                trackName = "| Thor"
+                colorBarView.layer.backgroundColor = R.color.lancingColor()?.cgColor
+                trackName = "| Lancing"
             }
         }
         

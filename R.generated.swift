@@ -116,10 +116,12 @@ struct R: Rswift.Validatable {
 
   /// This `R.color` struct is generated, and contains static references to 8 colors.
   struct color {
-    /// Color `Freyja Color`.
-    static let freyjaColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "Freyja Color")
-    /// Color `Odin Color`.
-    static let odinColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "Odin Color")
+    /// Color `Felix1 Color`.
+    static let felix1Color = Rswift.ColorResource(bundle: R.hostingBundle, name: "Felix1 Color")
+    /// Color `Felix2 Color`.
+    static let felix2Color = Rswift.ColorResource(bundle: R.hostingBundle, name: "Felix2 Color")
+    /// Color `Lancing Color`.
+    static let lancingColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "Lancing Color")
     /// Color `Primary Color`.
     static let primaryColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "Primary Color")
     /// Color `Primary Text Color`.
@@ -130,24 +132,31 @@ struct R: Rswift.Validatable {
     static let selectionColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "Selection Color")
     /// Color `Separator Color`.
     static let separatorColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "Separator Color")
-    /// Color `Thor Color`.
-    static let thorColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "Thor Color")
 
     #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "Freyja Color", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "Felix1 Color", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
-    static func freyjaColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.freyjaColor, compatibleWith: traitCollection)
+    static func felix1Color(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.felix1Color, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "Odin Color", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "Felix2 Color", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
-    static func odinColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.odinColor, compatibleWith: traitCollection)
+    static func felix2Color(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.felix2Color, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "Lancing Color", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func lancingColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.lancingColor, compatibleWith: traitCollection)
     }
     #endif
 
@@ -193,15 +202,6 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func separatorColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.separatorColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "Thor Color", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func thorColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.thorColor, compatibleWith: traitCollection)
     }
     #endif
 

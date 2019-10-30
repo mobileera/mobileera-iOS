@@ -43,11 +43,11 @@ public class Tag: UIButton {
     
     static func color(by name: String) -> UIColor {
         switch name {
-        case "Odin":
+        case "Felix 1":
             return UIColor.fromRGB(187, 94, 125)
-        case "Freyja":
+        case "Felix 2":
             return UIColor.fromRGB(135, 124, 176)
-        case "Thon":
+        case "Lancing":
             return UIColor.fromRGB(64, 127, 127)
         case "Android":
             return UIColor.fromRGB(164, 198, 57)
