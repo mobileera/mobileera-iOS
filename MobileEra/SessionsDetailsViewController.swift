@@ -1,9 +1,7 @@
 import UIKit
 import Foundation
-import EventKit
-import EventKitUI
 
-class SessionsDetailsViewController: BaseViewController, EKEventEditViewDelegate {
+class SessionsDetailsViewController: BaseViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tagsStackView: UIStackView!
@@ -15,17 +13,6 @@ class SessionsDetailsViewController: BaseViewController, EKEventEditViewDelegate
     
     private var speakersSource: SpeakersSource?
     
-    private lazy var eventController: EKEventEditViewController = {
-        let controller = EKEventEditViewController()
-        controller.eventStore = eventStore
-        controller.editViewDelegate = self
-        return controller
-    }()
-    
-    private lazy var eventStore: EKEventStore = {
-        return EKEventStore()
-    }()
-    
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "E, MMMM d / HH:mm" // DateFormatter.dateFormat(fromTemplate: "MMMM d / HH:mm", options: 0, locale: Locale.current) ?? "MMMM d / HH:mm"
@@ -33,7 +20,7 @@ class SessionsDetailsViewController: BaseViewController, EKEventEditViewDelegate
     }()
     
     private var session: Session?
-    private var btnAddToCalendar, btnAddToFavorites: UIBarButtonItem?
+    private var btnAddToFavorites: UIBarButtonItem?
     
     public init(session: Session) {
         super.init(nibName: "SessionsDetailsViewController", bundle: nil)
@@ -48,57 +35,20 @@ class SessionsDetailsViewController: BaseViewController, EKEventEditViewDelegate
         session?.toggleFavorites()
         (btnAddToFavorites?.customView as? UIButton)?.setImage(session?.isFavorite == true ? R.image.star_filled() : R.image.star(), for: .normal)
     }
-    
-    @objc func onAddToCalendarClicked() {
-        eventStore.requestAccess(to: .event) { [weak self] (granted, e) in
-            if !granted || e != nil {
-                print("An error occured: can't add event to the calendar")
-                return
-            }
-            
-            self?.addSessionToCalendar()
-        }
-    }
-    
-    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
-    func addSessionToCalendar() {
-        guard let session = session, let startDate = session.startDate else { return }
-        
-        let event = EKEvent(eventStore: eventStore)
-        // set the alarm for 5 minutes from now
-        event.addAlarm(EKAlarm(absoluteDate: startDate.addingTimeInterval(-5 * 60)))
 
-        event.startDate = startDate
-        event.calendar = eventStore.defaultCalendarForNewEvents
-        event.endDate = startDate.addingTimeInterval(session.duration)
-        event.title = session.title
-        
-        eventController.event = event
-        present(eventController, animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = ""
 
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
-        
-        let addToCalendar = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 22))
-        addToCalendar.setImage(R.image.addToCalendar(), for: .normal)
-        addToCalendar.addTarget(self, action: #selector(onAddToCalendarClicked), for: .touchUpInside)
 
         let addToFavorites = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 22))
         addToFavorites.setImage(session?.isFavorite == true ? R.image.star_filled() : R.image.star(), for: .normal)
         addToFavorites.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         addToFavorites.addTarget(self, action: #selector(onAddToFavoritesClicked), for: .touchUpInside)
         
-        btnAddToCalendar = UIBarButtonItem(customView: addToCalendar)
         btnAddToFavorites = UIBarButtonItem(customView: addToFavorites)
-
-        navigationItem.rightBarButtonItems = [btnAddToCalendar!, btnAddToFavorites!]
+        navigationItem.rightBarButtonItem = btnAddToFavorites!
         
         if let speakers = session?.speakersList {
             speakersTableView.register(SpeakerTableViewCell.nib, forCellReuseIdentifier: SpeakerTableViewCell.key)
