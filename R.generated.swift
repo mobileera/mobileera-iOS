@@ -754,7 +754,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.main` struct is generated, and contains static references to 23 localization keys.
+    /// This `R.string.main` struct is generated, and contains static references to 22 localization keys.
     struct main {
       /// en translation: Beer Palace Holmens gate 3 0250 Oslo
       ///
@@ -767,11 +767,11 @@ struct R: Rswift.Validatable {
       /// en translation: Day 1
       ///
       /// Locales: en, nb
-      static let mIdEaRl5SegmentTitles1 = Rswift.StringResource(key: "MId-ea-rl5.segmentTitles[1]", tableName: "Main", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
+      static let mIdEaRl5SegmentTitles0 = Rswift.StringResource(key: "MId-ea-rl5.segmentTitles[0]", tableName: "Main", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
       /// en translation: Day 2
       ///
       /// Locales: en, nb
-      static let mIdEaRl5SegmentTitles2 = Rswift.StringResource(key: "MId-ea-rl5.segmentTitles[2]", tableName: "Main", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
+      static let mIdEaRl5SegmentTitles1 = Rswift.StringResource(key: "MId-ea-rl5.segmentTitles[1]", tableName: "Main", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
       /// en translation: Felix Konferansesenter Bryggetorget 3 0250 Oslo
       ///
       /// Locales: en, nb
@@ -844,10 +844,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, nb
       static let xAc3ZTETTitle = Rswift.StringResource(key: "XAc-3Z-TET.title", tableName: "Main", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
-      /// en translation: Workshops
-      ///
-      /// Locales: en, nb
-      static let mIdEaRl5SegmentTitles0 = Rswift.StringResource(key: "MId-ea-rl5.segmentTitles[0]", tableName: "Main", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
 
       /// en translation: Beer Palace Holmens gate 3 0250 Oslo
       ///
@@ -882,6 +878,21 @@ struct R: Rswift.Validatable {
       /// en translation: Day 1
       ///
       /// Locales: en, nb
+      static func mIdEaRl5SegmentTitles0(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("MId-ea-rl5.segmentTitles[0]", tableName: "Main", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Main", preferredLanguages: preferredLanguages) else {
+          return "MId-ea-rl5.segmentTitles[0]"
+        }
+
+        return NSLocalizedString("MId-ea-rl5.segmentTitles[0]", tableName: "Main", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Day 2
+      ///
+      /// Locales: en, nb
       static func mIdEaRl5SegmentTitles1(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("MId-ea-rl5.segmentTitles[1]", tableName: "Main", bundle: hostingBundle, comment: "")
@@ -892,21 +903,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("MId-ea-rl5.segmentTitles[1]", tableName: "Main", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Day 2
-      ///
-      /// Locales: en, nb
-      static func mIdEaRl5SegmentTitles2(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("MId-ea-rl5.segmentTitles[2]", tableName: "Main", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Main", preferredLanguages: preferredLanguages) else {
-          return "MId-ea-rl5.segmentTitles[2]"
-        }
-
-        return NSLocalizedString("MId-ea-rl5.segmentTitles[2]", tableName: "Main", bundle: bundle, comment: "")
       }
 
       /// en translation: Felix Konferansesenter Bryggetorget 3 0250 Oslo
@@ -1177,21 +1173,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("XAc-3Z-TET.title", tableName: "Main", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Workshops
-      ///
-      /// Locales: en, nb
-      static func mIdEaRl5SegmentTitles0(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("MId-ea-rl5.segmentTitles[0]", tableName: "Main", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Main", preferredLanguages: preferredLanguages) else {
-          return "MId-ea-rl5.segmentTitles[0]"
-        }
-
-        return NSLocalizedString("MId-ea-rl5.segmentTitles[0]", tableName: "Main", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}

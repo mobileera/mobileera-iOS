@@ -12,7 +12,7 @@ class ScheduleSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return data.count + (selectedDay == 0 ? 0 : 1)
+        return data.count + 1
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -24,10 +24,6 @@ class ScheduleSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     private func isLegend(section: Int, in tableView: UITableView) -> Bool {
-        if selectedDay == 0 {
-            return false
-        }
-        
         return tableView.numberOfSections == section + 1
     }
     
@@ -105,10 +101,7 @@ class ScheduleSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         
         data = []
         
-        // workshop day
-        if selectedDay == 0 {
-            data = [Timeslot(startTime: "09:00", endTime: "16:00", sessionsList: allSessions.filter({$0.isWorkshop}))]
-        } else if let day = schedule[safe: selectedDay - 1] {
+        if let day = schedule[safe: selectedDay] {
             // conference days
             for timeslot in day.timeslots {
                 data.append(Timeslot(startTime: timeslot.startTime, endTime: timeslot.endTime, sessionsList: timeslot.sessionsList?.filter({isMatchingFilter($0)})))
