@@ -2,14 +2,19 @@ import UIKit
 import Firebase
 
 class ScheduleViewController: BaseViewController {
-    @IBAction func onSegmentControlValueChanged(_ sender: Any) {
-        scheduleSource?.setSelectedDay(daySegmentControl.selectedSegmentIndex)
-        tableView.reloadData()
-    }
-    
-    @IBOutlet weak var daySegmentControl: UISegmentedControl!
-    @IBOutlet weak var tableView: UITableView!
-    
+    lazy var customSegmentedControl: CustomSegmentedControl = {
+        let customSegmentedControl = CustomSegmentedControl()
+        customSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        customSegmentedControl.delegate = self
+        return customSegmentedControl
+    }()
+
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+
     private var filterBtn: UIBarButtonItem?
     private var scheduleSource: ScheduleSource?
     
@@ -25,32 +30,27 @@ class ScheduleViewController: BaseViewController {
 
         title = R.string.localizable.schedule()
         
-        scheduleSource = ScheduleSource(self, selectedDay: daySegmentControl.selectedSegmentIndex)
+        scheduleSource = ScheduleSource(self, selectedDay: 0)
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+
         tableView.dataSource = scheduleSource
         tableView.delegate = scheduleSource
         tableView.register(SessionTableViewCell.nib, forCellReuseIdentifier: SessionTableViewCell.key)
-        tableView.register(SessionTableViewLegendCell.nib, forCellReuseIdentifier: SessionTableViewLegendCell.key)
         tableView.register(SessionTableViewHeader.nib, forHeaderFooterViewReuseIdentifier: SessionTableViewHeader.key)
         tableView.isDirectionalLockEnabled = true
         tableView.separatorStyle = .none
 
-        daySegmentControl.layer.borderColor = R.color.primaryColor()?.cgColor
-        daySegmentControl.layer.cornerRadius = daySegmentControl.frame.height / 2
-        daySegmentControl.layer.borderWidth = 1
-        daySegmentControl.clipsToBounds = true
-        
-        daySegmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .medium)], for: .normal)
-        
+        navigationItem.titleView = customSegmentedControl
+
         loadData()
 
         updateFilterBadgeCount()
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.info(), landscapeImagePhone: nil, style: .plain, target: self, action: #selector(showInfo))
-    }
-
-    @objc func showInfo() {
-        let alertController = UIAlertController.infoAlert()        
-        present(alertController, animated: true, completion: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -155,3 +155,9 @@ class ScheduleViewController: BaseViewController {
     }
 }
 
+extension ScheduleViewController: CustomSegmentedControlDelegate {
+    func customSegmentedControl(_ customSegmentedControl: CustomSegmentedControl, didSelectDayAtIndex index: Int) {
+        scheduleSource?.setSelectedDay(index)
+        tableView.reloadData()
+    }
+}
