@@ -44,6 +44,13 @@ class ScheduleViewController: BaseViewController {
         loadData()
 
         updateFilterBadgeCount()
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.info(), landscapeImagePhone: nil, style: .plain, target: self, action: #selector(showInfo))
+    }
+
+    @objc func showInfo() {
+        let alertController = UIAlertController.infoAlert()        
+        present(alertController, animated: true, completion: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {

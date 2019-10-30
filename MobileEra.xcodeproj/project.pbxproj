@@ -40,7 +40,6 @@
 		D0D5B6BF20A74F9E00163B45 /* SettingsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D5B6BE20A74F9E00163B45 /* SettingsDataManager.swift */; };
 		D0DBBD6020B2D59C0091FF21 /* SpeakersDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DBBD5F20B2D59C0091FF21 /* SpeakersDetailsViewController.swift */; };
 		D0DBBD6220B2D5FC0091FF21 /* SpeakersDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0DBBD6120B2D5FC0091FF21 /* SpeakersDetailsViewController.xib */; };
-		D0DBBD6420B2E2BC0091FF21 /* InformationPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DBBD6320B2E2BC0091FF21 /* InformationPopupController.swift */; };
 		D0F51F95208D2725000E08AE /* SessionTableViewLegendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F51F93208D2725000E08AE /* SessionTableViewLegendCell.swift */; };
 		D0F51F96208D2725000E08AE /* SessionTableViewLegendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F51F94208D2725000E08AE /* SessionTableViewLegendCell.xib */; };
 		F49B9088E62489CB9CC8CA37 /* Pods_MobileEra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BFB7EAA70763CD20BE9D12 /* Pods_MobileEra.framework */; };
@@ -87,7 +86,6 @@
 		D0DBBD5D20B2C8C50091FF21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D0DBBD5F20B2D59C0091FF21 /* SpeakersDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersDetailsViewController.swift; sourceTree = "<group>"; };
 		D0DBBD6120B2D5FC0091FF21 /* SpeakersDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakersDetailsViewController.xib; sourceTree = "<group>"; };
-		D0DBBD6320B2E2BC0091FF21 /* InformationPopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPopupController.swift; sourceTree = "<group>"; };
 		D0DBBD6620B2EFC80091FF21 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Main.strings; sourceTree = "<group>"; };
 		D0F51F93208D2725000E08AE /* SessionTableViewLegendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewLegendCell.swift; sourceTree = "<group>"; };
 		D0F51F94208D2725000E08AE /* SessionTableViewLegendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableViewLegendCell.xib; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				D05AA5A2208C64F1002DC68C /* ScheduleViewController.swift */,
 				D05AA5A4208C64F1002DC68C /* SpeakersViewController.swift */,
 				D05AA5C2208C6AB2002DC68C /* VenueViewController.swift */,
-				D0DBBD6320B2E2BC0091FF21 /* InformationPopupController.swift */,
 				D0DBBD5F20B2D59C0091FF21 /* SpeakersDetailsViewController.swift */,
 				D0DBBD6120B2D5FC0091FF21 /* SpeakersDetailsViewController.xib */,
 				D00438E6208DBE0C00173602 /* SessionsDetailsViewController.swift */,
@@ -396,7 +393,6 @@
 				D05AA5D8208C8260002DC68C /* Tag.swift in Sources */,
 				D05AA5CF208C7A9A002DC68C /* R.generated.swift in Sources */,
 				D05AA5C3208C6AB2002DC68C /* VenueViewController.swift in Sources */,
-				D0DBBD6420B2E2BC0091FF21 /* InformationPopupController.swift in Sources */,
 				D0A59F5C20AB7ECF0011173F /* SpeakerTableViewCell.swift in Sources */,
 				D05AA5A3208C64F1002DC68C /* ScheduleViewController.swift in Sources */,
 				D05AA5F8208CDE91002DC68C /* SessionTableViewHeader.swift in Sources */,

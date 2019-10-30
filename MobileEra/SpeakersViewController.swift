@@ -37,10 +37,17 @@ class SpeakersViewController: BaseViewController {
         tableView.delegate = speakersSource
         tableView.register(SpeakerTableViewCell.nib, forCellReuseIdentifier: SpeakerTableViewCell.key)
         tableView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
-        
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.info(), landscapeImagePhone: nil, style: .plain, target: self, action: #selector(showInfo))
+
         loadData()
     }
-    
+
+    @objc func showInfo() {
+        let alertController = UIAlertController.infoAlert()
+        present(alertController, animated: true, completion: nil)
+    }
+
     private func loadData() {
         database.collection("speakers").getDocuments { speakersQuerySnapshot, speakersError in
             let speakersDocuments = speakersQuerySnapshot?.documents ?? [QueryDocumentSnapshot]()

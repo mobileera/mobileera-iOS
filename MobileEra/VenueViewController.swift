@@ -78,5 +78,12 @@ class VenueViewController: BaseViewController {
         btnPartyCopy.layer.cornerRadius = btnPartyCopy.frame.height / 2
         btnPartyCopy.layer.borderWidth = 0.5
         btnPartyCopy.layer.borderColor = R.color.primaryColor()?.cgColor
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.info(), landscapeImagePhone: nil, style: .plain, target: self, action: #selector(showInfo))
+    }
+
+    @objc func showInfo() {
+        let alertController = UIAlertController.infoAlert()
+        present(alertController, animated: true, completion: nil)
     }
 }

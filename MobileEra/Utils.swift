@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import MessageUI
 
 extension Collection where Indices.Iterator.Element == Index {
     
@@ -149,5 +150,30 @@ extension UIBarButtonItem {
     
     func removeBadge() {
         badgeLayer?.removeFromSuperlayer()
+    }
+}
+
+extension UIAlertController {
+    static func infoAlert() -> UIViewController {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.view.tintColor = R.color.primaryColor()
+        alertController.addAction(UIAlertAction(title: "Code of Conduct", style: .default) { action in
+            if let url = URL(string: "https://mobileera.rocks/cod") {
+                UIApplication.shared.open(url, options: [:])
+            }
+        })
+        alertController.addAction(UIAlertAction(title: "Mobile Era Team", style: .default) { action in
+            if let url = URL(string: "https://mobileera.rocks/team") {
+                UIApplication.shared.open(url, options: [:])
+            }
+        })
+
+        alertController.addAction(UIAlertAction(title: "Contact Us", style: .default) { action in
+            if let url = URL(string: "https://twitter.com/mobileeraconf") {
+                UIApplication.shared.open(url, options: [:])
+            }
+        })
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        return alertController
     }
 }
