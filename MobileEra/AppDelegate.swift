@@ -4,7 +4,6 @@ import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
     public static let domain = "https://mobileera.rocks"
 
@@ -14,4 +13,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-
