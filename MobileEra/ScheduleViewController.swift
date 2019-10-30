@@ -42,50 +42,17 @@ class ScheduleViewController: BaseViewController {
         daySegmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .medium)], for: .normal)
         
         loadData()
-        
-        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: Notification.FILTER_NOTIFICATION), object: nil, queue: nil, using: { [weak self] _ in
-            DispatchQueue.main.async {
-                self?.scheduleSource?.doFilter()
-                self?.tableView.reloadData()
-                self?.updateFilterBadgeCount()
-            }
-        })
-        
-        createFilterButton()
+
         updateFilterBadgeCount()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableView.reloadData()
     }
-    
-    @objc func onFilterClicked() {
-        performSegue(withIdentifier: "filterPopupSegue", sender: self)
-    }
-    
-    public func createFilterButton() {
-        let filterIcon = UIButton(frame: CGRect(x: 0, y: 0, width: 22, height: 22))
-        filterIcon.setImage(R.image.filter(), for: .normal)
-        filterIcon.addTarget(self, action: #selector(onFilterClicked), for: .touchUpInside)
-        
-        let badge = UILabel(frame: CGRect(x: 14, y: -4, width: 16, height: 16))
-        badge.layer.cornerRadius = badge.bounds.size.height / 2
-        badge.textAlignment = .center
-        badge.clipsToBounds = true
-        badge.textColor = .white
-        badge.font = UIFont.boldSystemFont(ofSize: 11)
-        badge.backgroundColor = .red
-        badge.tag = BADGE_TAG
-        badge.isHidden = true
-        filterIcon.addSubview(badge)
-        
-        filterBtn = UIBarButtonItem.init(customView: filterIcon)
-        navigationItem.leftBarButtonItem = filterBtn
-    }
-    
+
     private let BADGE_TAG = 24042018
-    
+
     public func updateFilterBadgeCount() {
         guard let badge = (filterBtn?.customView?.subviews.first(where: {$0.tag == BADGE_TAG}) as? UILabel) else { return }
         

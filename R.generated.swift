@@ -89,30 +89,6 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
-  struct segue {
-    /// This struct is generated for `ScheduleViewController`, and contains static references to 1 segues.
-    struct scheduleViewController {
-      /// Segue identifier `filterPopupSegue`.
-      static let filterPopupSegue: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ScheduleViewController, FilterPopupController> = Rswift.StoryboardSegueIdentifier(identifier: "filterPopupSegue")
-
-      #if os(iOS) || os(tvOS)
-      /// Optionally returns a typed version of segue `filterPopupSegue`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func filterPopupSegue(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ScheduleViewController, FilterPopupController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.scheduleViewController.filterPopupSegue, segue: segue)
-      }
-      #endif
-
-      fileprivate init() {}
-    }
-
-    fileprivate init() {}
-  }
-  #endif
-
-  #if os(iOS) || os(tvOS)
   /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
@@ -1343,7 +1319,6 @@ struct _R: Rswift.Validatable {
       let name = "Main"
 
       static func validate() throws {
-        if UIKit.UIImage(named: "checkbox-checked", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'checkbox-checked' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'copy' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "info", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'info' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "map", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'map' is used in storyboard 'Main', but couldn't be loaded.") }
