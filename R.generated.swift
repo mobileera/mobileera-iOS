@@ -222,18 +222,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 18 images.
+  /// This `R.image` struct is generated, and contains static references to 14 images.
   struct image {
     /// Image `Add to calendar`.
     static let addToCalendar = Rswift.ImageResource(bundle: R.hostingBundle, name: "Add to calendar")
-    /// Image `checkbox-checked`.
-    static let checkboxChecked = Rswift.ImageResource(bundle: R.hostingBundle, name: "checkbox-checked")
-    /// Image `checkbox-unchecked`.
-    static let checkboxUnchecked = Rswift.ImageResource(bundle: R.hostingBundle, name: "checkbox-unchecked")
-    /// Image `copy`.
-    static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "copy")
-    /// Image `filter`.
-    static let filter = Rswift.ImageResource(bundle: R.hostingBundle, name: "filter")
     /// Image `github-btn`.
     static let githubBtn = Rswift.ImageResource(bundle: R.hostingBundle, name: "github-btn")
     /// Image `github`.
@@ -265,34 +257,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Add to calendar", bundle: ..., traitCollection: ...)`
     static func addToCalendar(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.addToCalendar, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "checkbox-checked", bundle: ..., traitCollection: ...)`
-    static func checkboxChecked(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.checkboxChecked, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "checkbox-unchecked", bundle: ..., traitCollection: ...)`
-    static func checkboxUnchecked(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.checkboxUnchecked, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "copy", bundle: ..., traitCollection: ...)`
-    static func copy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.copy, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "filter", bundle: ..., traitCollection: ...)`
-    static func filter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.filter, compatibleWith: traitCollection)
     }
     #endif
 
