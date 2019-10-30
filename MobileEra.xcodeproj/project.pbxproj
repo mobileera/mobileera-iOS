@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD37A7689BF0AB25905510E0 /* Pods_MobileEra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0532B149C2E31C0DD37393 /* Pods_MobileEra.framework */; };
 		D00438E7208DBE0C00173602 /* SessionsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00438E6208DBE0C00173602 /* SessionsDetailsViewController.swift */; };
 		D00438EB208DC0E000173602 /* SessionsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00438E9208DC0E000173602 /* SessionsDetailsViewController.xib */; };
 		D04D2016208FB1DA005E5A7D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D2015208FB1DA005E5A7D /* Notification.swift */; };
@@ -46,11 +45,12 @@
 		D0DBBD6420B2E2BC0091FF21 /* InformationPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DBBD6320B2E2BC0091FF21 /* InformationPopupController.swift */; };
 		D0F51F95208D2725000E08AE /* SessionTableViewLegendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F51F93208D2725000E08AE /* SessionTableViewLegendCell.swift */; };
 		D0F51F96208D2725000E08AE /* SessionTableViewLegendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F51F94208D2725000E08AE /* SessionTableViewLegendCell.xib */; };
+		F49B9088E62489CB9CC8CA37 /* Pods_MobileEra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BFB7EAA70763CD20BE9D12 /* Pods_MobileEra.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E4DA563717710BF3A646E9C /* Pods-MobileEra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileEra.release.xcconfig"; path = "Target Support Files/Pods-MobileEra/Pods-MobileEra.release.xcconfig"; sourceTree = "<group>"; };
-		4A0532B149C2E31C0DD37393 /* Pods_MobileEra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileEra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08BFB7EAA70763CD20BE9D12 /* Pods_MobileEra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileEra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82746AF1FF69AE5F44AC4F70 /* Pods-MobileEra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileEra.debug.xcconfig"; path = "Target Support Files/Pods-MobileEra/Pods-MobileEra.debug.xcconfig"; sourceTree = "<group>"; };
 		D00438E6208DBE0C00173602 /* SessionsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsDetailsViewController.swift; sourceTree = "<group>"; };
 		D00438E9208DC0E000173602 /* SessionsDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionsDetailsViewController.xib; sourceTree = "<group>"; };
 		D04D2015208FB1DA005E5A7D /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		D0DBBD6620B2EFC80091FF21 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Main.strings; sourceTree = "<group>"; };
 		D0F51F93208D2725000E08AE /* SessionTableViewLegendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewLegendCell.swift; sourceTree = "<group>"; };
 		D0F51F94208D2725000E08AE /* SessionTableViewLegendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableViewLegendCell.xib; sourceTree = "<group>"; };
-		EAF17DAD58B159A0E6250FE5 /* Pods-MobileEra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileEra.debug.xcconfig"; path = "Target Support Files/Pods-MobileEra/Pods-MobileEra.debug.xcconfig"; sourceTree = "<group>"; };
+		F6922A42D0B34E161FEF2C63 /* Pods-MobileEra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileEra.release.xcconfig"; path = "Target Support Files/Pods-MobileEra/Pods-MobileEra.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,13 +103,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD37A7689BF0AB25905510E0 /* Pods_MobileEra.framework in Frameworks */,
+				F49B9088E62489CB9CC8CA37 /* Pods_MobileEra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B551C69DCE0AEA26176AE6F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08BFB7EAA70763CD20BE9D12 /* Pods_MobileEra.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D04D2014208FB1CC005E5A7D /* Events */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +132,7 @@
 				D05AA59F208C64F1002DC68C /* MobileEra */,
 				D05AA59E208C64F1002DC68C /* Products */,
 				EA2C9D6AD9CFF973AD25C8B9 /* Pods */,
-				D9BFC5F3CACEEBA388C0438C /* Frameworks */,
+				B551C69DCE0AEA26176AE6F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,19 +222,11 @@
 			path = DataManagers;
 			sourceTree = "<group>";
 		};
-		D9BFC5F3CACEEBA388C0438C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4A0532B149C2E31C0DD37393 /* Pods_MobileEra.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		EA2C9D6AD9CFF973AD25C8B9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EAF17DAD58B159A0E6250FE5 /* Pods-MobileEra.debug.xcconfig */,
-				0E4DA563717710BF3A646E9C /* Pods-MobileEra.release.xcconfig */,
+				82746AF1FF69AE5F44AC4F70 /* Pods-MobileEra.debug.xcconfig */,
+				F6922A42D0B34E161FEF2C63 /* Pods-MobileEra.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -238,13 +238,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D05AA5BC208C64F2002DC68C /* Build configuration list for PBXNativeTarget "MobileEra" */;
 			buildPhases = (
-				BDE71C1819E8DA9DC05296A5 /* [CP] Check Pods Manifest.lock */,
+				8B2E72DA717FDFD185874A13 /* [CP] Check Pods Manifest.lock */,
 				D05AA5CD208C7A5F002DC68C /* ShellScript */,
 				D05AA599208C64F1002DC68C /* Sources */,
 				D05AA59A208C64F1002DC68C /* Frameworks */,
 				D05AA59B208C64F1002DC68C /* Resources */,
-				53FB7711E86CE4A9B9EC7339 /* [CP] Embed Pods Frameworks */,
-				5B35BFDB9135CBBD80DD2AB9 /* [CP] Copy Pods Resources */,
+				9A38FE6531803C0078E08EA7 /* [CP] Embed Pods Frameworks */,
+				5A654EFB61E112503F07033F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -313,24 +313,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		53FB7711E86CE4A9B9EC7339 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5B35BFDB9135CBBD80DD2AB9 /* [CP] Copy Pods Resources */ = {
+		5A654EFB61E112503F07033F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -347,7 +330,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BDE71C1819E8DA9DC05296A5 /* [CP] Check Pods Manifest.lock */ = {
+		8B2E72DA717FDFD185874A13 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -369,6 +352,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9A38FE6531803C0078E08EA7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D05AA5CD208C7A5F002DC68C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -378,7 +378,7 @@
 				"$TEMP_DIR/rswift-lastrun",
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -514,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -569,7 +569,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -580,7 +580,7 @@
 		};
 		D05AA5BD208C64F2002DC68C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EAF17DAD58B159A0E6250FE5 /* Pods-MobileEra.debug.xcconfig */;
+			baseConfigurationReference = 82746AF1FF69AE5F44AC4F70 /* Pods-MobileEra.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -601,7 +601,7 @@
 		};
 		D05AA5BE208C64F2002DC68C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E4DA563717710BF3A646E9C /* Pods-MobileEra.release.xcconfig */;
+			baseConfigurationReference = F6922A42D0B34E161FEF2C63 /* Pods-MobileEra.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
