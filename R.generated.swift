@@ -462,7 +462,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 10 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 9 localization keys.
     struct localizable {
       /// en translation: Code of Conduct
       ///
@@ -496,10 +496,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, nb
       static let sponsors = Rswift.StringResource(key: "sponsors", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
-      /// en translation: The address copied to the clipboard
-      ///
-      /// Locales: en, nb
-      static let copied = Rswift.StringResource(key: "copied", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
       /// en translation: Venue
       ///
       /// Locales: en, nb
@@ -623,21 +619,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("sponsors", bundle: bundle, comment: "")
-      }
-
-      /// en translation: The address copied to the clipboard
-      ///
-      /// Locales: en, nb
-      static func copied(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("copied", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "copied"
-        }
-
-        return NSLocalizedString("copied", bundle: bundle, comment: "")
       }
 
       /// en translation: Venue
@@ -1256,7 +1237,6 @@ struct _R: Rswift.Validatable {
       let name = "Main"
 
       static func validate() throws {
-        if UIKit.UIImage(named: "copy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'copy' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "map", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'map' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "schedule", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'schedule' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "speaker", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'speaker' is used in storyboard 'Main', but couldn't be loaded.") }

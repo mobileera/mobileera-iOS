@@ -4,24 +4,12 @@ import GoogleMaps
 import Toaster
 
 class VenueViewController: BaseViewController {
-    @IBAction func onCopyVenueClicked(_ sender: Any) {
-        UIPasteboard.general.string = lblVenue.text
-        Toast(text: R.string.localizable.copied(), duration: Delay.short).show()
-    }
-    
-    @IBAction func onCopyPartyClicked(_ sender: Any) {
-        UIPasteboard.general.string = lblParty.text
-        Toast(text: R.string.localizable.copied(), duration: Delay.short).show()
-    }
-    
     @IBOutlet weak var lblVenue: UILabel!
     @IBOutlet weak var lblParty: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var venueMapContainer: UIView!
     @IBOutlet weak var partyMapContainer: UIView!
-    @IBOutlet weak var btnVenueCopy: UIButton!
-    @IBOutlet weak var btnPartyCopy: UIButton!
 
     private let venueLatitude = 59.910142
     private let venueLongitude = 10.725090
@@ -70,14 +58,6 @@ class VenueViewController: BaseViewController {
         partyMarker.position = CLLocationCoordinate2D(latitude: partyLatitude, longitude: partyLongitude)
         partyMarker.title = "Beer Palace"
         partyMarker.map = partyMapView
-        
-        btnVenueCopy.layer.cornerRadius = btnVenueCopy.frame.height / 2
-        btnVenueCopy.layer.borderWidth = 0.5
-        btnVenueCopy.layer.borderColor = R.color.primaryColor()?.cgColor
-        
-        btnPartyCopy.layer.cornerRadius = btnPartyCopy.frame.height / 2
-        btnPartyCopy.layer.borderWidth = 0.5
-        btnPartyCopy.layer.borderColor = R.color.primaryColor()?.cgColor
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.info(), landscapeImagePhone: nil, style: .plain, target: self, action: #selector(showInfo))
     }

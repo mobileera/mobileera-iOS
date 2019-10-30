@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MId-ea-rl5">
-                                <rect key="frame" x="15" y="58" width="290" height="32"/>
+                                <rect key="frame" x="15" y="52" width="290" height="32"/>
                                 <segments>
                                     <segment title="Day 1"/>
                                     <segment title="Day 2"/>
@@ -32,7 +32,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rdF-8P-lgt">
-                                <rect key="frame" x="0.0" y="97" width="320" height="334"/>
+                                <rect key="frame" x="0.0" y="91" width="320" height="340"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -64,7 +64,7 @@
                 <navigationController id="UbI-Pv-h0d" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="schedule" id="Fu3-UA-VeG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LF8-8b-umT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="Primary Color"/>
                     </navigationBar>
@@ -149,6 +149,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" name="Primary Color"/>
+                        <color key="selectedImageTintColor" name="Primary Color"/>
                     </tabBar>
                     <connections>
                         <segue destination="UbI-Pv-h0d" kind="relationship" relationship="viewControllers" id="7Nm-Qq-k0o"/>
@@ -209,7 +210,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74R-om-GTk">
-                                <rect key="frame" x="0.0" y="50" width="320" height="381"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="NuW-pH-VCb">
                                         <rect key="frame" x="15" y="0.0" width="290" height="599"/>
@@ -260,42 +261,12 @@ Holmens gate 3
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQ0-Er-fFy">
-                                        <rect key="frame" x="273" y="44" width="32" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="32" id="PZK-fs-OOx"/>
-                                            <constraint firstAttribute="height" constant="32" id="k7p-pu-hI5"/>
-                                        </constraints>
-                                        <color key="tintColor" name="Primary Color"/>
-                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                        <state key="normal" image="copy"/>
-                                        <connections>
-                                            <action selector="onCopyVenueClicked:" destination="Rvq-pZ-e3V" eventType="touchUpInside" id="RNT-KF-9ER"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56X-nN-qY6">
-                                        <rect key="frame" x="273" y="351" width="32" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="ZdY-R6-FjL"/>
-                                            <constraint firstAttribute="width" constant="32" id="amg-gf-nwn"/>
-                                        </constraints>
-                                        <color key="tintColor" name="Primary Color"/>
-                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                        <state key="normal" image="copy"/>
-                                        <connections>
-                                            <action selector="onCopyPartyClicked:" destination="Rvq-pZ-e3V" eventType="touchUpInside" id="3D2-lq-zoP"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="fQ0-Er-fFy" firstAttribute="trailing" secondItem="aF5-DO-2ws" secondAttribute="trailing" id="WXp-gO-kj0"/>
-                                    <constraint firstItem="56X-nN-qY6" firstAttribute="centerY" secondItem="wvn-EB-l7a" secondAttribute="centerY" id="eVT-x1-PPL"/>
                                     <constraint firstAttribute="bottom" secondItem="NuW-pH-VCb" secondAttribute="bottom" id="gXZ-ja-2QO"/>
                                     <constraint firstAttribute="trailing" secondItem="BaX-oA-c52" secondAttribute="trailing" constant="15" id="meM-lX-WHF"/>
                                     <constraint firstItem="BaX-oA-c52" firstAttribute="leading" secondItem="74R-om-GTk" secondAttribute="leading" constant="15" id="nPr-3P-kBj"/>
-                                    <constraint firstItem="fQ0-Er-fFy" firstAttribute="centerY" secondItem="aF5-DO-2ws" secondAttribute="centerY" id="nau-aU-TgT"/>
                                     <constraint firstItem="NuW-pH-VCb" firstAttribute="top" secondItem="74R-om-GTk" secondAttribute="top" id="o28-5x-5kP"/>
-                                    <constraint firstItem="56X-nN-qY6" firstAttribute="trailing" secondItem="wvn-EB-l7a" secondAttribute="trailing" id="ptV-zc-1s3"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -312,8 +283,6 @@ Holmens gate 3
                     <tabBarItem key="tabBarItem" title="Venue" image="map" id="QhN-xT-vAY"/>
                     <navigationItem key="navigationItem" id="Eur-T7-Ybj"/>
                     <connections>
-                        <outlet property="btnPartyCopy" destination="56X-nN-qY6" id="4r6-AJ-W5q"/>
-                        <outlet property="btnVenueCopy" destination="fQ0-Er-fFy" id="GsA-zj-dKu"/>
                         <outlet property="lblParty" destination="wvn-EB-l7a" id="R5a-iX-Lxw"/>
                         <outlet property="lblVenue" destination="aF5-DO-2ws" id="nPN-zf-6se"/>
                         <outlet property="partyMapContainer" destination="BaX-oA-c52" id="nDd-0l-jXM"/>
@@ -342,10 +311,9 @@ Holmens gate 3
         </scene>
     </scenes>
     <resources>
-        <image name="copy" width="16" height="16"/>
-        <image name="map" width="23" height="23"/>
-        <image name="schedule" width="23" height="23"/>
-        <image name="speaker" width="23" height="23"/>
+        <image name="map" width="23" height="21"/>
+        <image name="schedule" width="23" height="25"/>
+        <image name="speaker" width="23" height="26"/>
         <namedColor name="Primary Color">
             <color red="0.17254901960784313" green="0.34509803921568627" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
