@@ -46,7 +46,7 @@ class SessionsDetailsViewController: BaseViewController, EKEventEditViewDelegate
     
     @objc func onAddToFavoritesClicked() {
         session?.toggleFavorites()
-        (btnAddToFavorites?.customView as? UIButton)?.setImage(session?.isFavorite == true ? R.image.removeFromFavorites() : R.image.addToFavorites(), for: .normal)
+        (btnAddToFavorites?.customView as? UIButton)?.setImage(session?.isFavorite == true ? R.image.star_filled() : R.image.star(), for: .normal)
     }
     
     @objc func onAddToCalendarClicked() {
@@ -91,7 +91,8 @@ class SessionsDetailsViewController: BaseViewController, EKEventEditViewDelegate
         addToCalendar.addTarget(self, action: #selector(onAddToCalendarClicked), for: .touchUpInside)
 
         let addToFavorites = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 22))
-        addToFavorites.setImage(session?.isFavorite == true ? R.image.removeFromFavorites() : R.image.addToFavorites(), for: .normal)
+        addToFavorites.setImage(session?.isFavorite == true ? R.image.star_filled() : R.image.star(), for: .normal)
+        addToFavorites.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         addToFavorites.addTarget(self, action: #selector(onAddToFavoritesClicked), for: .touchUpInside)
         
         btnAddToCalendar = UIBarButtonItem(customView: addToCalendar)

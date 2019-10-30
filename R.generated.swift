@@ -222,14 +222,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 20 images.
+  /// This `R.image` struct is generated, and contains static references to 18 images.
   struct image {
     /// Image `Add to calendar`.
     static let addToCalendar = Rswift.ImageResource(bundle: R.hostingBundle, name: "Add to calendar")
-    /// Image `Add to favorites`.
-    static let addToFavorites = Rswift.ImageResource(bundle: R.hostingBundle, name: "Add to favorites")
-    /// Image `Remove from favorites`.
-    static let removeFromFavorites = Rswift.ImageResource(bundle: R.hostingBundle, name: "Remove from favorites")
     /// Image `checkbox-checked`.
     static let checkboxChecked = Rswift.ImageResource(bundle: R.hostingBundle, name: "checkbox-checked")
     /// Image `checkbox-unchecked`.
@@ -269,20 +265,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Add to calendar", bundle: ..., traitCollection: ...)`
     static func addToCalendar(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.addToCalendar, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "Add to favorites", bundle: ..., traitCollection: ...)`
-    static func addToFavorites(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.addToFavorites, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "Remove from favorites", bundle: ..., traitCollection: ...)`
-    static func removeFromFavorites(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.removeFromFavorites, compatibleWith: traitCollection)
     }
     #endif
 
