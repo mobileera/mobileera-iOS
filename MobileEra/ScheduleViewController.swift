@@ -96,30 +96,23 @@ class ScheduleViewController: BaseViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        
-        database.observe(.value) { [weak self] (snapshot) in
-            
-            guard
-                let speakersSnapshot = snapshot.childSnapshot(forPath: "speakers").value,
-                let sessionsSnapshot = snapshot.childSnapshot(forPath: "sessions").value,
-                let scheduleSnapshot = snapshot.childSnapshot(forPath: "schedule").value,
-                
-                JSONSerialization.isValidJSONObject(speakersSnapshot),
-                JSONSerialization.isValidJSONObject(sessionsSnapshot),
-                JSONSerialization.isValidJSONObject(scheduleSnapshot),
-                
-                let speakersData = try? JSONSerialization.data(withJSONObject: speakersSnapshot, options: []),
-                let sessionsData = try? JSONSerialization.data(withJSONObject: sessionsSnapshot, options: []),
-                let schedulesData = try? JSONSerialization.data(withJSONObject: scheduleSnapshot, options: []),
-                
-                let speakersDictionary = try? JSONDecoder().decode([String : Speaker].self, from: speakersData),
-                let sessionsDictionary = try? JSONDecoder().decode([String: Session].self, from: sessionsData),
-                let scheduleDictionary = try? JSONDecoder().decode([String: Day].self, from: schedulesData)
-                
-                else {
-                    print("Error parsing data from Firebase")
-                    return
-            }
+
+        database.observe(.value) { [weak self] snapshot in
+            guard let speakersSnapshot = snapshot.childSnapshot(forPath: "speakers").value else { fatalError() }
+            guard let sessionsSnapshot = snapshot.childSnapshot(forPath: "sessions").value else { fatalError() }
+            guard let scheduleSnapshot = snapshot.childSnapshot(forPath: "schedule").value else { fatalError() }
+
+            guard JSONSerialization.isValidJSONObject(speakersSnapshot) else { fatalError() }
+            guard JSONSerialization.isValidJSONObject(sessionsSnapshot) else { fatalError() }
+            guard JSONSerialization.isValidJSONObject(scheduleSnapshot) else { fatalError() }
+
+            guard let speakersData = try? JSONSerialization.data(withJSONObject: speakersSnapshot, options: []) else { fatalError() }
+            guard let sessionsData = try? JSONSerialization.data(withJSONObject: sessionsSnapshot, options: []) else { fatalError() }
+            guard let schedulesData = try? JSONSerialization.data(withJSONObject: scheduleSnapshot, options: []) else { fatalError() }
+
+            guard let speakersDictionary = try? JSONDecoder().decode([String : Speaker].self, from: speakersData) else { fatalError() }
+            guard let sessionsDictionary = try? JSONDecoder().decode([String: Session].self, from: sessionsData) else { fatalError() }
+            guard let scheduleDictionary = try? JSONDecoder().decode([String: Day].self, from: schedulesData) else { fatalError() }
             
             for speaker in speakersDictionary {
                 speaker.value.id = speaker.key
