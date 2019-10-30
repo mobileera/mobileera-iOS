@@ -29,8 +29,6 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSCalendarsUsageDescription</key>
-	<string>To add a session to the calendar we need you to grant access to it</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
