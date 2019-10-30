@@ -20,14 +20,11 @@
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "G5D-tK-UA6"; */
 "G5D-tK-UA6.title" = "Title";
 
-/* Class = "UISegmentedControl"; MId-ea-rl5.segmentTitles[0] = "Workshops"; ObjectID = "MId-ea-rl5"; */
-"MId-ea-rl5.segmentTitles[0]" = "Workshops";
+/* Class = "UISegmentedControl"; MId-ea-rl5.segmentTitles[0] = "Day 1"; ObjectID = "MId-ea-rl5"; */
+"MId-ea-rl5.segmentTitles[0]" = "Day 1";
 
-/* Class = "UISegmentedControl"; MId-ea-rl5.segmentTitles[1] = "Day 1"; ObjectID = "MId-ea-rl5"; */
-"MId-ea-rl5.segmentTitles[1]" = "Day 1";
-
-/* Class = "UISegmentedControl"; MId-ea-rl5.segmentTitles[2] = "Day 2"; ObjectID = "MId-ea-rl5"; */
-"MId-ea-rl5.segmentTitles[2]" = "Day 2";
+/* Class = "UISegmentedControl"; MId-ea-rl5.segmentTitles[1] = "Day 2"; ObjectID = "MId-ea-rl5"; */
+"MId-ea-rl5.segmentTitles[1]" = "Day 2";
 
 /* Class = "UILabel"; text = "Show only favorite sessions?"; ObjectID = "PoO-Zq-gr7"; */
 "PoO-Zq-gr7.text" = "Show only favorite sessions?";
