@@ -157,23 +157,23 @@ extension UIAlertController {
     static func infoAlert() -> UIViewController {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alertController.view.tintColor = R.color.primaryColor()
-        alertController.addAction(UIAlertAction(title: "Code of Conduct", style: .default) { action in
+        alertController.addAction(UIAlertAction(title: R.string.localizable.codeofconduct(), style: .default) { action in
             if let url = URL(string: "https://mobileera.rocks/cod") {
                 UIApplication.shared.open(url, options: [:])
             }
         })
-        alertController.addAction(UIAlertAction(title: "Mobile Era Team", style: .default) { action in
+        alertController.addAction(UIAlertAction(title: R.string.localizable.mobileera_team(), style: .default) { action in
             if let url = URL(string: "https://mobileera.rocks/team") {
                 UIApplication.shared.open(url, options: [:])
             }
         })
 
-        alertController.addAction(UIAlertAction(title: "Contact Us", style: .default) { action in
+        alertController.addAction(UIAlertAction(title: R.string.localizable.contact_us(), style: .default) { action in
             if let url = URL(string: "https://twitter.com/mobileeraconf") {
                 UIApplication.shared.open(url, options: [:])
             }
         })
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: R.string.localizable.dismiss(), style: .cancel, handler: nil))
         return alertController
     }
 }

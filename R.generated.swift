@@ -473,10 +473,6 @@ struct R: Rswift.Validatable {
 
     /// This `R.string.localizable` struct is generated, and contains static references to 10 localization keys.
     struct localizable {
-      /// en translation: Can't send an email
-      ///
-      /// Locales: en, nb
-      static let cant_send_email = Rswift.StringResource(key: "cant_send_email", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
       /// en translation: Code of Conduct
       ///
       /// Locales: en, nb
@@ -485,6 +481,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, nb
       static let contact_us = Rswift.StringResource(key: "contact_us", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
+      /// en translation: Dismiss
+      ///
+      /// Locales: en, nb
+      static let dismiss = Rswift.StringResource(key: "dismiss", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
       /// en translation: Mobile Era Team
       ///
       /// Locales: en, nb
@@ -514,21 +514,6 @@ struct R: Rswift.Validatable {
       /// Locales: en, nb
       static let venue = Rswift.StringResource(key: "venue", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "nb"], comment: nil)
 
-      /// en translation: Can't send an email
-      ///
-      /// Locales: en, nb
-      static func cant_send_email(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("cant_send_email", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "cant_send_email"
-        }
-
-        return NSLocalizedString("cant_send_email", bundle: bundle, comment: "")
-      }
-
       /// en translation: Code of Conduct
       ///
       /// Locales: en, nb
@@ -557,6 +542,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("contact_us", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Dismiss
+      ///
+      /// Locales: en, nb
+      static func dismiss(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("dismiss", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "dismiss"
+        }
+
+        return NSLocalizedString("dismiss", bundle: bundle, comment: "")
       }
 
       /// en translation: Mobile Era Team
