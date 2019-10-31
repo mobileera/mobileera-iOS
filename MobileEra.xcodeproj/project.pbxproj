@@ -64,7 +64,6 @@
 		D05AA5AE208C64F2002DC68C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D05AA5C2208C6AB2002DC68C /* VenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewController.swift; sourceTree = "<group>"; };
 		D05AA5C8208C7902002DC68C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D05AA5CB208C790C002DC68C /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D05AA5CE208C7A9A002DC68C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D05AA5D4208C8152002DC68C /* ScheduleSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSource.swift; sourceTree = "<group>"; };
 		D05AA5D7208C8260002DC68C /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -80,7 +79,6 @@
 		D05AA5FB208CDF8A002DC68C /* SessionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SessionTableViewCell.xib; path = Cells/SessionTableViewCell.xib; sourceTree = "<group>"; };
 		D05AA5FC208CDF8A002DC68C /* SessionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionTableViewCell.swift; path = Cells/SessionTableViewCell.swift; sourceTree = "<group>"; };
 		D05AA5FF208CDFA4002DC68C /* SessionTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SessionTableViewHeader.xib; path = Cells/SessionTableViewHeader.xib; sourceTree = "<group>"; };
-		D0A59F5120AAD79D0011173F /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D0A59F5320AAD7A30011173F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D0A59F5420AAF1470011173F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D0A59F5A20AB7ECF0011173F /* SpeakerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeakerTableViewCell.swift; path = Cells/SpeakerTableViewCell.swift; sourceTree = "<group>"; };
@@ -264,7 +262,6 @@
 			knownRegions = (
 				en,
 				Base,
-				nb,
 			);
 			mainGroup = D05AA594208C64F1002DC68C;
 			productRefGroup = D05AA59E208C64F1002DC68C /* Products */;
@@ -346,7 +343,7 @@
 				"$TEMP_DIR/rswift-lastrun",
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -403,7 +400,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				D05AA5C8208C7902002DC68C /* en */,
-				D05AA5CB208C790C002DC68C /* nb */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -411,7 +407,6 @@
 		D0A59F5220AAD79D0011173F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D0A59F5120AAD79D0011173F /* nb */,
 				D0A59F5320AAD7A30011173F /* en */,
 			);
 			name = InfoPlist.strings;

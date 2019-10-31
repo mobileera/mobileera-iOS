@@ -1,8 +1,38 @@
 import Foundation
 import UIKit
 import Toaster
+import MapKit
 
 class VenueViewController: BaseViewController {
+    lazy var venueMapView: MKMapView = {
+        let mapView = MKMapView(frame: .zero)
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        return mapView
+    }()
+
+    lazy var partyVenueMapView: MKMapView = {
+        let mapView = MKMapView(frame: .zero)
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        return mapView
+    }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = R.string.localizable.location()
+
+        let stackView = UIStackView(arrangedSubviews: [venueMapView, partyVenueMapView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        view.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
+
     /*@IBOutlet weak var lblVenue: UILabel!
     @IBOutlet weak var lblParty: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!

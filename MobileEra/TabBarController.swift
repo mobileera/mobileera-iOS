@@ -16,7 +16,7 @@ class TabBarController: UITabBarController {
         scheduleNavigationViewController.navigationBar.backgroundColor = .white
         speakersNavigationViewController.tabBarItem = speakersTabBarItem
 
-        let venueTabBarItem = UITabBarItem(title: R.string.localizable.venue(), image: R.image.map(), selectedImage: nil)
+        let venueTabBarItem = UITabBarItem(title: R.string.localizable.location(), image: R.image.map(), selectedImage: nil)
         let venueViewController = VenueViewController()
         let venueNavigationViewController = UINavigationController(rootViewController: venueViewController)
         scheduleNavigationViewController.navigationBar.backgroundColor = .white
