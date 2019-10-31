@@ -467,10 +467,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let dismiss = Rswift.StringResource(key: "dismiss", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
-      /// en translation: Location
+      /// en translation: Locations
       ///
       /// Locales: en
-      static let location = Rswift.StringResource(key: "location", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      static let locations = Rswift.StringResource(key: "locations", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Mobile Era Team
       ///
       /// Locales: en
@@ -537,19 +537,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("dismiss", bundle: bundle, comment: "")
       }
 
-      /// en translation: Location
+      /// en translation: Locations
       ///
       /// Locales: en
-      static func location(preferredLanguages: [String]? = nil) -> String {
+      static func locations(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("location", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("locations", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "location"
+          return "locations"
         }
 
-        return NSLocalizedString("location", bundle: bundle, comment: "")
+        return NSLocalizedString("locations", bundle: bundle, comment: "")
       }
 
       /// en translation: Mobile Era Team
