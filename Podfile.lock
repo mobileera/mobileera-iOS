@@ -113,7 +113,6 @@ PODS:
   - SDWebImage (5.2.5):
     - SDWebImage/Core (= 5.2.5)
   - SDWebImage/Core (5.2.5)
-  - Toaster (2.2.0)
 
 DEPENDENCIES:
   - Firebase/Core
@@ -122,7 +121,6 @@ DEPENDENCIES:
   - nanopb (= 0.3.901)
   - R.swift
   - SDWebImage
-  - Toaster
 
 SPEC REPOS:
   https://cdn.cocoapods.org/:
@@ -148,7 +146,6 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - SDWebImage
-    - Toaster
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -173,8 +170,7 @@ SPEC CHECKSUMS:
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   SDWebImage: 4eabf2fa6695c95c47724214417a9c036c965e4a
-  Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
 
-PODFILE CHECKSUM: aac021c3608f0447039c815f03ef8c2d7f0d149e
+PODFILE CHECKSUM: 5a2e957d723259002523b269872ec7bbb3e6b9c4
 
 COCOAPODS: 1.8.4
