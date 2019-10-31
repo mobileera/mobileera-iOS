@@ -453,8 +453,12 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 9 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
     struct localizable {
+      /// en translation: Apple Maps
+      ///
+      /// Locales: en
+      static let apple_maps = Rswift.StringResource(key: "apple_maps", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Code of Conduct
       ///
       /// Locales: en
@@ -467,6 +471,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let dismiss = Rswift.StringResource(key: "dismiss", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Google Maps
+      ///
+      /// Locales: en
+      static let google_maps = Rswift.StringResource(key: "google_maps", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Locations
       ///
       /// Locales: en
@@ -491,6 +499,21 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let sponsors = Rswift.StringResource(key: "sponsors", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+
+      /// en translation: Apple Maps
+      ///
+      /// Locales: en
+      static func apple_maps(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("apple_maps", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "apple_maps"
+        }
+
+        return NSLocalizedString("apple_maps", bundle: bundle, comment: "")
+      }
 
       /// en translation: Code of Conduct
       ///
@@ -535,6 +558,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("dismiss", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Google Maps
+      ///
+      /// Locales: en
+      static func google_maps(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("google_maps", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "google_maps"
+        }
+
+        return NSLocalizedString("google_maps", bundle: bundle, comment: "")
       }
 
       /// en translation: Locations

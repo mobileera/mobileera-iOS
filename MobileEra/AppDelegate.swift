@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = .white
 
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.tintColor = R.color.primaryColor()
         window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
 

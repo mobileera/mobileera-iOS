@@ -92,7 +92,7 @@ class VenueViewController: BaseViewController {
             return
         }
 
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: name, message: nil, preferredStyle: .actionSheet)
         for app in installedApps {
             let button = UIAlertAction(title: app.title, style: .default) { _ in
                 app.openMap(at: appLocation)
