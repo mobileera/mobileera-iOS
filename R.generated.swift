@@ -734,7 +734,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Primary Color", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary Color' is used in storyboard 'SpeakerTableViewCell', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Primary Text Color", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Primary Text Color' is used in storyboard 'SpeakerTableViewCell', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "Secondary Text Color", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Secondary Text Color' is used in storyboard 'SpeakerTableViewCell', but couldn't be loaded.") }
         }
       }
 

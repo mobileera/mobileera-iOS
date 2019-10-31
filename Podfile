@@ -5,7 +5,6 @@ target 'MobileEra' do
 
   pod 'SDWebImage'
   pod 'R.swift'
-  pod 'GoogleMaps'
   pod 'Toaster'
 
   pod 'Firebase/Core'

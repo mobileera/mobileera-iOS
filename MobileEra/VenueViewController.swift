@@ -1,10 +1,9 @@
 import Foundation
 import UIKit
-import GoogleMaps
 import Toaster
 
 class VenueViewController: BaseViewController {
-    @IBOutlet weak var lblVenue: UILabel!
+    /*@IBOutlet weak var lblVenue: UILabel!
     @IBOutlet weak var lblParty: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
@@ -65,5 +64,5 @@ class VenueViewController: BaseViewController {
     @objc func showInfo() {
         let alertController = UIAlertController.infoAlert()
         present(alertController, animated: true, completion: nil)
-    }
+    }*/
 }

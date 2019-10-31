@@ -16,14 +16,28 @@ extension Decodable {
 
 class SpeakersViewController: BaseViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorColor = UIColor.lightGray.withAlphaComponent(0.4)
+        tableView.estimatedRowHeight = 76
+        return tableView
+    }()
+
     var database: Firestore!
     
     private var speakersSource: SpeakersSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
 
         let settings = FirestoreSettings()
         settings.isPersistenceEnabled = true

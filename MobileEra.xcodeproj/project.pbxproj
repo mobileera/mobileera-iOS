@@ -231,7 +231,6 @@
 				D05AA59A208C64F1002DC68C /* Frameworks */,
 				D05AA59B208C64F1002DC68C /* Resources */,
 				9A38FE6531803C0078E08EA7 /* [CP] Embed Pods Frameworks */,
-				5A654EFB61E112503F07033F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,23 +298,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5A654EFB61E112503F07033F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8B2E72DA717FDFD185874A13 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,7 +346,7 @@
 				"$TEMP_DIR/rswift-lastrun",
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
