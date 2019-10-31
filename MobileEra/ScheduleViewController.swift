@@ -164,14 +164,17 @@ extension ScheduleViewController: CustomSegmentedControlDelegate {
 
 extension ScheduleViewController: LocationsViewDelegate {
     func locationsView(_ locationsView: LocationsView, didSelectFelix1 isSelected: Bool) {
-        
+        scheduleSource?.setSelectedFelix1(isSelected)
+        tableView.reloadData()
     }
 
     func locationsView(_ locationsView: LocationsView, didSelectFelix2 isSelected: Bool) {
-
+        scheduleSource?.setSelectedFelix2(isSelected)
+        tableView.reloadData()
     }
 
     func locationsView(_ locationsView: LocationsView, didSelectLancing isSelected: Bool) {
-
+        scheduleSource?.setSelectedLancing(isSelected)
+        tableView.reloadData()
     }
 }

@@ -95,12 +95,42 @@ class ScheduleSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 
         if let day = schedule[safe: selectedDay] {
             for timeslot in day.timeslots {
-                let sessions = timeslot.sessionsList?.filter { isMatchingFilter($0) }
-                let timeslot = Timeslot(
-                    startTime: timeslot.startTime,
-                    endTime: timeslot.endTime,
-                    sessionsList: sessions)
-                data.append(timeslot)
+                var sessions =  [Session]()
+                if isFelix1Selected {
+                    if let session = timeslot.sessionsList?[safe: 0] {
+                        if session.speakers?.count ?? 0 > 0 {
+                            sessions.append(contentsOf: ([session]))
+                        }
+                    }
+                }
+
+                if isFelix2Selected {
+                    if let session = timeslot.sessionsList?[safe: 1] {
+                        if session.speakers?.count ?? 0 > 0 {
+                            sessions.append(contentsOf: ([session]))
+                        }
+                    }
+                }
+
+                if isLancingSelected {
+                    if let session = timeslot.sessionsList?[safe: 2] {
+                        if session.speakers?.count ?? 0 > 0 {
+                            sessions.append(contentsOf: ([session]))
+                        }
+                    }
+                }
+
+                if !isFelix1Selected && !isFelix2Selected && !isLancingSelected {
+                    sessions = timeslot.sessionsList ?? [Session]()
+                }
+
+                if sessions.count > 0 {
+                    let timeslot = Timeslot(
+                        startTime: timeslot.startTime,
+                        endTime: timeslot.endTime,
+                        sessionsList: sessions)
+                    data.append(timeslot)
+                }
             }
         }
     }
@@ -115,8 +145,6 @@ class ScheduleSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         if !selectedTags.isEmpty {
             return session.tags?.contains(where: {selectedTags.contains($0)}) ?? false
         }        
-
-        // If the session belongs to the venue show
 
         return true
     }
