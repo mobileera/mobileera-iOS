@@ -94,7 +94,7 @@ class VenueViewController: BaseViewController {
 
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         for app in installedApps {
-            let button = UIAlertAction(title: String(format: "Open in", app.title), style: .default) { _ in
+            let button = UIAlertAction(title: app.title, style: .default) { _ in
                 app.openMap(at: appLocation)
             }
             alert.addAction(button)

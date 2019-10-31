@@ -1,7 +1,7 @@
 import MapKit
 
 class AppleMapsLoader: MapAppLoader {
-    let title = "Map"
+    let title = "Apple Maps"
 
     func isSupported() -> Bool {
         return true
