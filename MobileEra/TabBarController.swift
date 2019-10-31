@@ -8,18 +8,21 @@ class TabBarController: UITabBarController {
         let scheduleViewController = ScheduleViewController()
         let scheduleNavigationViewController = UINavigationController(rootViewController: scheduleViewController)
         scheduleNavigationViewController.navigationBar.backgroundColor = .white
+        scheduleNavigationViewController.navigationBar.tintColor = R.color.primaryColor()
         scheduleNavigationViewController.tabBarItem = scheduleTabBarItem
 
         let speakersTabBarItem = UITabBarItem(title: R.string.localizable.speakers(), image: R.image.speaker(), selectedImage: nil)
         let speakersViewController = SpeakersViewController()
         let speakersNavigationViewController = UINavigationController(rootViewController: speakersViewController)
         scheduleNavigationViewController.navigationBar.backgroundColor = .white
+        scheduleNavigationViewController.navigationBar.tintColor = R.color.primaryColor()
         speakersNavigationViewController.tabBarItem = speakersTabBarItem
 
         let venueTabBarItem = UITabBarItem(title: R.string.localizable.locations(), image: R.image.map(), selectedImage: nil)
         let venueViewController = VenueViewController()
         let venueNavigationViewController = UINavigationController(rootViewController: venueViewController)
         scheduleNavigationViewController.navigationBar.backgroundColor = .white
+        scheduleNavigationViewController.navigationBar.tintColor = R.color.primaryColor()
         venueNavigationViewController.tabBarItem = venueTabBarItem
 
         viewControllers = [scheduleNavigationViewController, speakersNavigationViewController, venueNavigationViewController]
