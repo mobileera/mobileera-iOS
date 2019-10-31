@@ -59,10 +59,57 @@ class VenueViewController: BaseViewController {
         annotation.coordinate = location
         annotation.title = title
         mapView.addAnnotation(annotation)
+
+        let taGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(getDirectionsButton(_:)))
+        mapView.addGestureRecognizer(taGestureRecognizer)
     }
 
     @objc func showInfo() {
         let alertController = UIAlertController.infoAlert()
         present(alertController, animated: true, completion: nil)
     }
+
+    @objc func getDirectionsButton(_ sender: UITapGestureRecognizer) {
+        var location = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        var name = ""
+        if sender.view == venueMapView {
+            location = CLLocationCoordinate2D(latitude: venueLatitude, longitude: venueLongitude)
+            name = "Felix Conference Center"
+        } else if sender.view == partyVenueMapView {
+            location = CLLocationCoordinate2D(latitude: partyLatitude, longitude: partyLongitude)
+            name = "Beer Palace"
+        }
+
+        let appLocation = MapAppLocation(name: name, location: location)
+        let mapApps: [MapAppLoader] = [
+            AppleMapsLoader(),
+            GoogleMapsLoader()
+        ]
+        let installedApps = mapApps.filter { $0.isSupported() }
+
+        guard installedApps.count > 1 else {
+            installedApps.first?.openMap(at: appLocation)
+            return
+        }
+
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        for app in installedApps {
+            let button = UIAlertAction(title: String(format: "Open in", app.title), style: .default) { _ in
+                app.openMap(at: appLocation)
+            }
+            alert.addAction(button)
+        }
+
+        let cancelButton = UIAlertAction(title: R.string.localizable.dismiss(), style: .cancel, handler: nil)
+        alert.addAction(cancelButton)
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            alert.popoverPresentationController?.permittedArrowDirections = [.left, .right]
+            alert.popoverPresentationController?.sourceView = view
+            alert.popoverPresentationController?.sourceRect = view.convert(sender.view!.bounds.insetBy(dx: 16, dy: 16), from: sender.view!)
+        }
+
+        present(alert, animated: true)
+    }
+
 }

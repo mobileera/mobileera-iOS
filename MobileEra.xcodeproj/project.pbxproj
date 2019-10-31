@@ -10,6 +10,9 @@
 		440802382369C4B900318F38 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440802372369C4B900318F38 /* TabBarController.swift */; };
 		4408023A2369E2C100318F38 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440802392369E2C100318F38 /* CustomSegmentedControl.swift */; };
 		4408023C2369E39700318F38 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4408023B2369E39700318F38 /* LocationsView.swift */; };
+		444AB67E236B5761004E8EC9 /* MapAppLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444AB67B236B5761004E8EC9 /* MapAppLoader.swift */; };
+		444AB67F236B5761004E8EC9 /* AppleMapsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444AB67C236B5761004E8EC9 /* AppleMapsLoader.swift */; };
+		444AB680236B5761004E8EC9 /* GoogleMapsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444AB67D236B5761004E8EC9 /* GoogleMapsLoader.swift */; };
 		D00438E7208DBE0C00173602 /* SessionsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00438E6208DBE0C00173602 /* SessionsDetailsViewController.swift */; };
 		D00438EB208DC0E000173602 /* SessionsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00438E9208DC0E000173602 /* SessionsDetailsViewController.xib */; };
 		D05AA5A1208C64F1002DC68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05AA5A0208C64F1002DC68C /* AppDelegate.swift */; };
@@ -52,6 +55,9 @@
 		440802372369C4B900318F38 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		440802392369E2C100318F38 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		4408023B2369E39700318F38 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		444AB67B236B5761004E8EC9 /* MapAppLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAppLoader.swift; sourceTree = "<group>"; };
+		444AB67C236B5761004E8EC9 /* AppleMapsLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleMapsLoader.swift; sourceTree = "<group>"; };
+		444AB67D236B5761004E8EC9 /* GoogleMapsLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsLoader.swift; sourceTree = "<group>"; };
 		82746AF1FF69AE5F44AC4F70 /* Pods-MobileEra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileEra.debug.xcconfig"; path = "Target Support Files/Pods-MobileEra/Pods-MobileEra.debug.xcconfig"; sourceTree = "<group>"; };
 		D00438E6208DBE0C00173602 /* SessionsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsDetailsViewController.swift; sourceTree = "<group>"; };
 		D00438E9208DC0E000173602 /* SessionsDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionsDetailsViewController.xib; sourceTree = "<group>"; };
@@ -104,6 +110,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		444AB67A236B5761004E8EC9 /* ExternalMapApps */ = {
+			isa = PBXGroup;
+			children = (
+				444AB67B236B5761004E8EC9 /* MapAppLoader.swift */,
+				444AB67C236B5761004E8EC9 /* AppleMapsLoader.swift */,
+				444AB67D236B5761004E8EC9 /* GoogleMapsLoader.swift */,
+			);
+			path = ExternalMapApps;
+			sourceTree = "<group>";
+		};
 		B551C69DCE0AEA26176AE6F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +149,7 @@
 		D05AA59F208C64F1002DC68C /* MobileEra */ = {
 			isa = PBXGroup;
 			children = (
+				444AB67A236B5761004E8EC9 /* ExternalMapApps */,
 				D0D5B6BD20A74F9000163B45 /* DataManagers */,
 				D05AA5EE208C8C48002DC68C /* Cells */,
 				D05AA5D6208C81B0002DC68C /* Model */,
@@ -371,8 +388,10 @@
 				D0D5B6BF20A74F9E00163B45 /* SettingsDataManager.swift in Sources */,
 				D05AA5A1208C64F1002DC68C /* AppDelegate.swift in Sources */,
 				D05AA5F0208C8C94002DC68C /* UICustomTableViewCell.swift in Sources */,
+				444AB680236B5761004E8EC9 /* GoogleMapsLoader.swift in Sources */,
 				4408023C2369E39700318F38 /* LocationsView.swift in Sources */,
 				D0A59F5F20AB83D90011173F /* SpeakersSource.swift in Sources */,
+				444AB67E236B5761004E8EC9 /* MapAppLoader.swift in Sources */,
 				D05AA5DA208C8332002DC68C /* Speaker.swift in Sources */,
 				D05AA5D8208C8260002DC68C /* Tag.swift in Sources */,
 				D05AA5CF208C7A9A002DC68C /* R.generated.swift in Sources */,
@@ -381,6 +400,7 @@
 				D05AA5A3208C64F1002DC68C /* ScheduleViewController.swift in Sources */,
 				D05AA5F8208CDE91002DC68C /* SessionTableViewHeader.swift in Sources */,
 				4408023A2369E2C100318F38 /* CustomSegmentedControl.swift in Sources */,
+				444AB67F236B5761004E8EC9 /* AppleMapsLoader.swift in Sources */,
 				D05AA5DC208C83EA002DC68C /* Social.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
