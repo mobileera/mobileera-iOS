@@ -1,6 +1,5 @@
 import Foundation
 import UIKit
-import Toaster
 import MapKit
 
 class VenueViewController: BaseViewController {
