@@ -1,69 +1,115 @@
 import Foundation
 import UIKit
-import GoogleMaps
 import Toaster
+import MapKit
 
 class VenueViewController: BaseViewController {
-    @IBOutlet weak var lblVenue: UILabel!
-    @IBOutlet weak var lblParty: UILabel!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var venueMapContainer: UIView!
-    @IBOutlet weak var partyMapContainer: UIView!
-
     private let venueLatitude = 59.910142
     private let venueLongitude = 10.725090
     private let partyLatitude = 59.9105716
     private let partyLongitude = 10.7262615
-    
+
+    lazy var venueMapView: MKMapView = {
+        let mapView = MKMapView(frame: .zero)
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        return mapView
+    }()
+
+    lazy var partyVenueMapView: MKMapView = {
+        let mapView = MKMapView(frame: .zero)
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        return mapView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = R.string.localizable.venue()
-        
-        scrollView.contentInset = UIEdgeInsets.init(top: 15, left: 0, bottom: 15, right: 0)
-        
-        let venue = GMSCameraPosition.camera(withLatitude: venueLatitude, longitude: venueLongitude, zoom: 17.0)
-        let party = GMSCameraPosition.camera(withLatitude: partyLatitude, longitude: partyLongitude, zoom: 17.0)
+        title = R.string.localizable.locations()
+        view.backgroundColor = .white
 
-           let venueMapView = GMSMapView.map(withFrame: CGRect.zero, camera: venue)
-           let partyMapView = GMSMapView.map(withFrame: CGRect.zero, camera: party)
-        
-        venueMapContainer.addSubview(venueMapView)
-        partyMapContainer.addSubview(partyMapView)
-        
-        venueMapView.translatesAutoresizingMaskIntoConstraints = false
-        venueMapView.isUserInteractionEnabled = false
-        partyMapView.translatesAutoresizingMaskIntoConstraints = false
-        partyMapView.isUserInteractionEnabled = false
-        
-        venueMapView.widthAnchor.constraint(equalTo: venueMapContainer.widthAnchor).isActive = true
-        venueMapView.heightAnchor.constraint(equalTo: venueMapContainer.heightAnchor).isActive = true
-        venueMapView.centerXAnchor.constraint(equalTo: venueMapContainer.centerXAnchor).isActive = true
-        venueMapView.centerYAnchor.constraint(equalTo: venueMapContainer.centerYAnchor).isActive = true
-        venueMapContainer.layer.cornerRadius = 8
-        venueMapContainer.clipsToBounds = true
-        partyMapView.widthAnchor.constraint(equalTo: partyMapContainer.widthAnchor).isActive = true
-        partyMapView.heightAnchor.constraint(equalTo: partyMapContainer.heightAnchor).isActive = true
-        partyMapView.centerXAnchor.constraint(equalTo: partyMapContainer.centerXAnchor).isActive = true
-        partyMapView.centerYAnchor.constraint(equalTo: partyMapContainer.centerYAnchor).isActive = true
-        partyMapContainer.layer.cornerRadius = 8
-        partyMapContainer.clipsToBounds = true
-        
-        let venueMarker = GMSMarker()
-        venueMarker.position = CLLocationCoordinate2D(latitude: venueLatitude, longitude: venueLongitude)
-        venueMarker.title = "Felix Konferansesenter"
-        venueMarker.map = venueMapView
-        
-        let partyMarker = GMSMarker()
-        partyMarker.position = CLLocationCoordinate2D(latitude: partyLatitude, longitude: partyLongitude)
-        partyMarker.title = "Beer Palace"
-        partyMarker.map = partyMapView
+        let spacing: CGFloat = 10.0
+        let stackView = UIStackView(arrangedSubviews: [venueMapView, partyVenueMapView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = spacing
+        view.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: spacing),
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -spacing),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: spacing),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -spacing)
+        ])
+
+        let venueLocation = CLLocationCoordinate2D(latitude: venueLatitude, longitude: venueLongitude)
+        styleMap(mapView: venueMapView, location: venueLocation, title: "Conference\nFelix Conference Center\nBryggetorget 3\n0250 Oslo")
+
+        let partyVenueLocation = CLLocationCoordinate2D(latitude: partyLatitude, longitude: partyLongitude)
+        styleMap(mapView: partyVenueMapView, location: partyVenueLocation, title: "Party\nBeer Palace\nHolmens gate 3\n0250 Oslo")
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.info(), landscapeImagePhone: nil, style: .plain, target: self, action: #selector(showInfo))
+    }
+
+    func styleMap(mapView: MKMapView, location: CLLocationCoordinate2D, title: String) {
+        let distance = 100.0
+        let venueRegion = MKCoordinateRegion(center: location, latitudinalMeters: distance, longitudinalMeters: distance)
+        mapView.setRegion(venueRegion, animated: true)
+        mapView.layer.cornerRadius = 16
+
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        annotation.title = title
+        mapView.addAnnotation(annotation)
+
+        let taGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(getDirectionsButton(_:)))
+        mapView.addGestureRecognizer(taGestureRecognizer)
     }
 
     @objc func showInfo() {
         let alertController = UIAlertController.infoAlert()
         present(alertController, animated: true, completion: nil)
     }
+
+    @objc func getDirectionsButton(_ sender: UITapGestureRecognizer) {
+        var location = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        var name = ""
+        if sender.view == venueMapView {
+            location = CLLocationCoordinate2D(latitude: venueLatitude, longitude: venueLongitude)
+            name = "Felix Conference Center"
+        } else if sender.view == partyVenueMapView {
+            location = CLLocationCoordinate2D(latitude: partyLatitude, longitude: partyLongitude)
+            name = "Beer Palace"
+        }
+
+        let appLocation = MapAppLocation(name: name, location: location)
+        let mapApps: [MapAppLoader] = [
+            AppleMapsLoader(),
+            GoogleMapsLoader()
+        ]
+        let installedApps = mapApps.filter { $0.isSupported() }
+
+        guard installedApps.count > 1 else {
+            installedApps.first?.openMap(at: appLocation)
+            return
+        }
+
+        let alert = UIAlertController(title: name, message: nil, preferredStyle: .actionSheet)
+        for app in installedApps {
+            let button = UIAlertAction(title: app.title, style: .default) { _ in
+                app.openMap(at: appLocation)
+            }
+            alert.addAction(button)
+        }
+
+        let cancelButton = UIAlertAction(title: R.string.localizable.dismiss(), style: .cancel, handler: nil)
+        alert.addAction(cancelButton)
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            alert.popoverPresentationController?.permittedArrowDirections = [.left, .right]
+            alert.popoverPresentationController?.sourceView = view
+            alert.popoverPresentationController?.sourceRect = view.convert(sender.view!.bounds.insetBy(dx: 16, dy: 16), from: sender.view!)
+        }
+
+        present(alert, animated: true)
+    }
+
 }

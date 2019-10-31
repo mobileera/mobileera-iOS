@@ -1,9 +1,11 @@
 "speakers" = "Speakers";
-"venue" = "Venue";
+"locations" = "Locations";
 "schedule" = "Schedule";
 "room" = "Room";
 "sponsors" = "Sponsors";
 "codeofconduct" = "Code of Conduct";
 "mobileera_team" = "Mobile Era Team";
-"contact_us" = "Contact us";
+"contact_us" = "Contact Us";
 "dismiss" = "Dismiss";
+"apple_maps" = "Apple Maps";
+"google_maps" = "Google Maps";

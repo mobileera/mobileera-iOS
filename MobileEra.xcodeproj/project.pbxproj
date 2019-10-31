@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440802382369C4B900318F38 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440802372369C4B900318F38 /* TabBarController.swift */; };
+		4408023A2369E2C100318F38 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440802392369E2C100318F38 /* CustomSegmentedControl.swift */; };
+		4408023C2369E39700318F38 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4408023B2369E39700318F38 /* LocationsView.swift */; };
+		444AB67E236B5761004E8EC9 /* MapAppLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444AB67B236B5761004E8EC9 /* MapAppLoader.swift */; };
+		444AB67F236B5761004E8EC9 /* AppleMapsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444AB67C236B5761004E8EC9 /* AppleMapsLoader.swift */; };
+		444AB680236B5761004E8EC9 /* GoogleMapsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444AB67D236B5761004E8EC9 /* GoogleMapsLoader.swift */; };
 		D00438E7208DBE0C00173602 /* SessionsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00438E6208DBE0C00173602 /* SessionsDetailsViewController.swift */; };
 		D00438EB208DC0E000173602 /* SessionsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00438E9208DC0E000173602 /* SessionsDetailsViewController.xib */; };
 		D05AA5A1208C64F1002DC68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05AA5A0208C64F1002DC68C /* AppDelegate.swift */; };
 		D05AA5A3208C64F1002DC68C /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05AA5A2208C64F1002DC68C /* ScheduleViewController.swift */; };
 		D05AA5A5208C64F1002DC68C /* SpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05AA5A4208C64F1002DC68C /* SpeakersViewController.swift */; };
-		D05AA5A8208C64F1002DC68C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05AA5A6208C64F1002DC68C /* Main.storyboard */; };
 		D05AA5AA208C64F2002DC68C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D05AA5A9208C64F2002DC68C /* Assets.xcassets */; };
 		D05AA5AD208C64F2002DC68C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05AA5AB208C64F2002DC68C /* LaunchScreen.storyboard */; };
 		D05AA5C3208C6AB2002DC68C /* VenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05AA5C2208C6AB2002DC68C /* VenueViewController.swift */; };
@@ -47,6 +52,12 @@
 
 /* Begin PBXFileReference section */
 		08BFB7EAA70763CD20BE9D12 /* Pods_MobileEra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileEra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		440802372369C4B900318F38 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		440802392369E2C100318F38 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		4408023B2369E39700318F38 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		444AB67B236B5761004E8EC9 /* MapAppLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAppLoader.swift; sourceTree = "<group>"; };
+		444AB67C236B5761004E8EC9 /* AppleMapsLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleMapsLoader.swift; sourceTree = "<group>"; };
+		444AB67D236B5761004E8EC9 /* GoogleMapsLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsLoader.swift; sourceTree = "<group>"; };
 		82746AF1FF69AE5F44AC4F70 /* Pods-MobileEra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileEra.debug.xcconfig"; path = "Target Support Files/Pods-MobileEra/Pods-MobileEra.debug.xcconfig"; sourceTree = "<group>"; };
 		D00438E6208DBE0C00173602 /* SessionsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsDetailsViewController.swift; sourceTree = "<group>"; };
 		D00438E9208DC0E000173602 /* SessionsDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionsDetailsViewController.xib; sourceTree = "<group>"; };
@@ -54,13 +65,11 @@
 		D05AA5A0208C64F1002DC68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D05AA5A2208C64F1002DC68C /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		D05AA5A4208C64F1002DC68C /* SpeakersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersViewController.swift; sourceTree = "<group>"; };
-		D05AA5A7208C64F1002DC68C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D05AA5A9208C64F2002DC68C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D05AA5AC208C64F2002DC68C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D05AA5AE208C64F2002DC68C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D05AA5C2208C6AB2002DC68C /* VenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewController.swift; sourceTree = "<group>"; };
 		D05AA5C8208C7902002DC68C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D05AA5CB208C790C002DC68C /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D05AA5CE208C7A9A002DC68C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D05AA5D4208C8152002DC68C /* ScheduleSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSource.swift; sourceTree = "<group>"; };
 		D05AA5D7208C8260002DC68C /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -76,17 +85,14 @@
 		D05AA5FB208CDF8A002DC68C /* SessionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SessionTableViewCell.xib; path = Cells/SessionTableViewCell.xib; sourceTree = "<group>"; };
 		D05AA5FC208CDF8A002DC68C /* SessionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionTableViewCell.swift; path = Cells/SessionTableViewCell.swift; sourceTree = "<group>"; };
 		D05AA5FF208CDFA4002DC68C /* SessionTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SessionTableViewHeader.xib; path = Cells/SessionTableViewHeader.xib; sourceTree = "<group>"; };
-		D0A59F5120AAD79D0011173F /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D0A59F5320AAD7A30011173F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D0A59F5420AAF1470011173F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D0A59F5A20AB7ECF0011173F /* SpeakerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeakerTableViewCell.swift; path = Cells/SpeakerTableViewCell.swift; sourceTree = "<group>"; };
 		D0A59F5B20AB7ECF0011173F /* SpeakerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SpeakerTableViewCell.xib; path = Cells/SpeakerTableViewCell.xib; sourceTree = "<group>"; };
 		D0A59F5E20AB83D90011173F /* SpeakersSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersSource.swift; sourceTree = "<group>"; };
 		D0D5B6BE20A74F9E00163B45 /* SettingsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataManager.swift; sourceTree = "<group>"; };
-		D0DBBD5D20B2C8C50091FF21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D0DBBD5F20B2D59C0091FF21 /* SpeakersDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersDetailsViewController.swift; sourceTree = "<group>"; };
 		D0DBBD6120B2D5FC0091FF21 /* SpeakersDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakersDetailsViewController.xib; sourceTree = "<group>"; };
-		D0DBBD6620B2EFC80091FF21 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Main.strings; sourceTree = "<group>"; };
 		D0F51F93208D2725000E08AE /* SessionTableViewLegendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewLegendCell.swift; sourceTree = "<group>"; };
 		D0F51F94208D2725000E08AE /* SessionTableViewLegendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableViewLegendCell.xib; sourceTree = "<group>"; };
 		F6922A42D0B34E161FEF2C63 /* Pods-MobileEra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileEra.release.xcconfig"; path = "Target Support Files/Pods-MobileEra/Pods-MobileEra.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +110,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		444AB67A236B5761004E8EC9 /* ExternalMapApps */ = {
+			isa = PBXGroup;
+			children = (
+				444AB67B236B5761004E8EC9 /* MapAppLoader.swift */,
+				444AB67C236B5761004E8EC9 /* AppleMapsLoader.swift */,
+				444AB67D236B5761004E8EC9 /* GoogleMapsLoader.swift */,
+			);
+			path = ExternalMapApps;
+			sourceTree = "<group>";
+		};
 		B551C69DCE0AEA26176AE6F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +149,7 @@
 		D05AA59F208C64F1002DC68C /* MobileEra */ = {
 			isa = PBXGroup;
 			children = (
+				444AB67A236B5761004E8EC9 /* ExternalMapApps */,
 				D0D5B6BD20A74F9000163B45 /* DataManagers */,
 				D05AA5EE208C8C48002DC68C /* Cells */,
 				D05AA5D6208C81B0002DC68C /* Model */,
@@ -147,7 +164,6 @@
 				D0DBBD6120B2D5FC0091FF21 /* SpeakersDetailsViewController.xib */,
 				D00438E6208DBE0C00173602 /* SessionsDetailsViewController.swift */,
 				D00438E9208DC0E000173602 /* SessionsDetailsViewController.xib */,
-				D05AA5A6208C64F1002DC68C /* Main.storyboard */,
 				D05AA5A9208C64F2002DC68C /* Assets.xcassets */,
 				D05AA5AB208C64F2002DC68C /* LaunchScreen.storyboard */,
 				D05AA5C7208C7902002DC68C /* Localizable.strings */,
@@ -155,6 +171,9 @@
 				D05AA5AE208C64F2002DC68C /* Info.plist */,
 				D0A59F5220AAD79D0011173F /* InfoPlist.strings */,
 				D05AA5E7208C8859002DC68C /* Utils.swift */,
+				440802372369C4B900318F38 /* TabBarController.swift */,
+				440802392369E2C100318F38 /* CustomSegmentedControl.swift */,
+				4408023B2369E39700318F38 /* LocationsView.swift */,
 			);
 			path = MobileEra;
 			sourceTree = "<group>";
@@ -227,7 +246,6 @@
 				D05AA59A208C64F1002DC68C /* Frameworks */,
 				D05AA59B208C64F1002DC68C /* Resources */,
 				9A38FE6531803C0078E08EA7 /* [CP] Embed Pods Frameworks */,
-				5A654EFB61E112503F07033F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,7 +279,6 @@
 			knownRegions = (
 				en,
 				Base,
-				nb,
 			);
 			mainGroup = D05AA594208C64F1002DC68C;
 			productRefGroup = D05AA59E208C64F1002DC68C /* Products */;
@@ -287,7 +304,6 @@
 				D05AA600208CDFA4002DC68C /* SessionTableViewHeader.xib in Resources */,
 				D0F51F96208D2725000E08AE /* SessionTableViewLegendCell.xib in Resources */,
 				D05AA5AA208C64F2002DC68C /* Assets.xcassets in Resources */,
-				D05AA5A8208C64F1002DC68C /* Main.storyboard in Resources */,
 				D0A59F5020AAD79D0011173F /* InfoPlist.strings in Resources */,
 				D00438EB208DC0E000173602 /* SessionsDetailsViewController.xib in Resources */,
 			);
@@ -296,23 +312,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5A654EFB61E112503F07033F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileEra/Pods-MobileEra-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8B2E72DA717FDFD185874A13 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -383,12 +382,16 @@
 				D0F51F95208D2725000E08AE /* SessionTableViewLegendCell.swift in Sources */,
 				D05AA5E2208C85B4002DC68C /* Day.swift in Sources */,
 				D05AA5E8208C8859002DC68C /* Utils.swift in Sources */,
+				440802382369C4B900318F38 /* TabBarController.swift in Sources */,
 				D05AA5D5208C8152002DC68C /* ScheduleSource.swift in Sources */,
 				D00438E7208DBE0C00173602 /* SessionsDetailsViewController.swift in Sources */,
 				D0D5B6BF20A74F9E00163B45 /* SettingsDataManager.swift in Sources */,
 				D05AA5A1208C64F1002DC68C /* AppDelegate.swift in Sources */,
 				D05AA5F0208C8C94002DC68C /* UICustomTableViewCell.swift in Sources */,
+				444AB680236B5761004E8EC9 /* GoogleMapsLoader.swift in Sources */,
+				4408023C2369E39700318F38 /* LocationsView.swift in Sources */,
 				D0A59F5F20AB83D90011173F /* SpeakersSource.swift in Sources */,
+				444AB67E236B5761004E8EC9 /* MapAppLoader.swift in Sources */,
 				D05AA5DA208C8332002DC68C /* Speaker.swift in Sources */,
 				D05AA5D8208C8260002DC68C /* Tag.swift in Sources */,
 				D05AA5CF208C7A9A002DC68C /* R.generated.swift in Sources */,
@@ -396,6 +399,8 @@
 				D0A59F5C20AB7ECF0011173F /* SpeakerTableViewCell.swift in Sources */,
 				D05AA5A3208C64F1002DC68C /* ScheduleViewController.swift in Sources */,
 				D05AA5F8208CDE91002DC68C /* SessionTableViewHeader.swift in Sources */,
+				4408023A2369E2C100318F38 /* CustomSegmentedControl.swift in Sources */,
+				444AB67F236B5761004E8EC9 /* AppleMapsLoader.swift in Sources */,
 				D05AA5DC208C83EA002DC68C /* Social.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,16 +408,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D05AA5A6208C64F1002DC68C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D05AA5A7208C64F1002DC68C /* Base */,
-				D0DBBD5D20B2C8C50091FF21 /* en */,
-				D0DBBD6620B2EFC80091FF21 /* nb */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D05AA5AB208C64F2002DC68C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -425,7 +420,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				D05AA5C8208C7902002DC68C /* en */,
-				D05AA5CB208C790C002DC68C /* nb */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -433,7 +427,6 @@
 		D0A59F5220AAD79D0011173F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D0A59F5120AAD79D0011173F /* nb */,
 				D0A59F5320AAD7A30011173F /* en */,
 			);
 			name = InfoPlist.strings;
