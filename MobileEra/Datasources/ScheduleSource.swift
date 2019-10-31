@@ -15,7 +15,15 @@ class ScheduleSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        let session = data[safe: indexPath.section]?.sessionsList?[safe: indexPath.row]
+
+        let speakersCount = session?.speakersList?.count ?? 0
+        if speakersCount > 0 {
+            return UITableView.automaticDimension
+        } else {
+            print(session?.title ?? "")
+            return 70
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -40,11 +48,20 @@ class ScheduleSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: SessionTableViewCell.key) as? SessionTableViewCell {
-            cell.set(session: data[safe: indexPath.section]?.sessionsList?[safe: indexPath.row], track: indexPath.row)
+        let session = data[safe: indexPath.section]?.sessionsList?[safe: indexPath.row]
+
+        let speakersCount = session?.speakersList?.count ?? 0
+        if speakersCount > 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: SessionTableViewCell.key) as? SessionTableViewCell {
+                cell.set(session: session, track: indexPath.row)
+                return cell
+            }
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self), for: indexPath)
+            cell.textLabel?.text = session?.title
             return cell
         }
-        
+
         return UITableViewCell()
     }
 

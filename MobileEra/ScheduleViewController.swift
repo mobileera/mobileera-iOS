@@ -48,6 +48,7 @@ class ScheduleViewController: BaseViewController {
 
         tableView.dataSource = scheduleSource
         tableView.delegate = scheduleSource
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         tableView.register(SessionTableViewCell.nib, forCellReuseIdentifier: SessionTableViewCell.key)
         tableView.register(SessionTableViewHeader.nib, forHeaderFooterViewReuseIdentifier: SessionTableViewHeader.key)
         tableView.isDirectionalLockEnabled = true
