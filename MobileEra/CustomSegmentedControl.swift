@@ -14,8 +14,11 @@ class CustomSegmentedControl: UIView {
         segmentControl.addTarget(self, action: #selector(onSegmentControlValueChanged), for: .valueChanged)
         segmentControl.layer.cornerRadius = segmentControl.frame.height / 2
         segmentControl.clipsToBounds = true
+        segmentControl.backgroundColor = UIColor.black.withAlphaComponent(0.3)
 
-        segmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .medium)], for: .normal)
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .medium), NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .medium), NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
+
 
         return segmentControl
     }()

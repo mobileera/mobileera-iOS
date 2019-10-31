@@ -120,13 +120,13 @@ class LocationsView: UIView {
     }
 }
 
-extension UIButton {
-    private func imageWithColor(color: UIColor) -> UIImage? {
+extension UIColor {
+    func toImage() -> UIImage? {
         let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
 
-        context?.setFillColor(color.cgColor)
+        context?.setFillColor(cgColor)
         context?.fill(rect)
 
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -134,9 +134,12 @@ extension UIButton {
 
         return image
     }
+}
 
+extension UIButton {
     func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
         guard let color = color else { return }
-        self.setBackgroundImage(imageWithColor(color: color), for: state)
+        self.setBackgroundImage(color.toImage(), for: state)
     }
+
 }
