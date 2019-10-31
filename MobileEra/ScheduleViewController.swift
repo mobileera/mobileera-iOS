@@ -39,13 +39,8 @@ class ScheduleViewController: BaseViewController {
         
         scheduleSource = ScheduleSource(self, selectedDay: 0)
         view.addSubview(tableView)
-        view.addSubview(locationsView)
         NSLayoutConstraint.activate([
-            locationsView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            locationsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            locationsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-
-            tableView.topAnchor.constraint(equalTo: locationsView.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
