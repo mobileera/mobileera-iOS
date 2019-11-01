@@ -4,11 +4,10 @@ class TabBarController: UITabBarController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nil, bundle: nil)
 
-        tabBar.tintColor = .white
-        tabBar.unselectedItemTintColor = UIColor.black.withAlphaComponent(0.35)
-        tabBar.barTintColor = R.color.primaryColor()
+        tabBar.tintColor = R.color.primaryColor()
+        tabBar.barTintColor = .white
         tabBar.isTranslucent = false
-        tabBar.backgroundColor = R.color.primaryColor()
+        tabBar.backgroundColor = .white
 
         let scheduleTabBarItem = UITabBarItem(title: R.string.localizable.schedule(), image: R.image.schedule(), selectedImage: nil)
         let scheduleViewController = ScheduleViewController()
