@@ -21,7 +21,6 @@ class ScheduleSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         if speakersCount > 0 {
             return UITableView.automaticDimension
         } else {
-            print(session?.title ?? "")
             return 70
         }
     }
