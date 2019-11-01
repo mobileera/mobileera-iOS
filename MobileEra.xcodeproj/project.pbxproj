@@ -10,6 +10,7 @@
 		440802382369C4B900318F38 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440802372369C4B900318F38 /* TabBarController.swift */; };
 		4408023A2369E2C100318F38 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440802392369E2C100318F38 /* CustomSegmentedControl.swift */; };
 		4408023C2369E39700318F38 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4408023B2369E39700318F38 /* LocationsView.swift */; };
+		444552EA236BE31E009E1C22 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444552E9236BE31E009E1C22 /* NavigationController.swift */; };
 		444AB67E236B5761004E8EC9 /* MapAppLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444AB67B236B5761004E8EC9 /* MapAppLoader.swift */; };
 		444AB67F236B5761004E8EC9 /* AppleMapsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444AB67C236B5761004E8EC9 /* AppleMapsLoader.swift */; };
 		444AB680236B5761004E8EC9 /* GoogleMapsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444AB67D236B5761004E8EC9 /* GoogleMapsLoader.swift */; };
@@ -55,6 +56,7 @@
 		440802372369C4B900318F38 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		440802392369E2C100318F38 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		4408023B2369E39700318F38 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		444552E9236BE31E009E1C22 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		444AB67B236B5761004E8EC9 /* MapAppLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAppLoader.swift; sourceTree = "<group>"; };
 		444AB67C236B5761004E8EC9 /* AppleMapsLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleMapsLoader.swift; sourceTree = "<group>"; };
 		444AB67D236B5761004E8EC9 /* GoogleMapsLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsLoader.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				440802372369C4B900318F38 /* TabBarController.swift */,
 				440802392369E2C100318F38 /* CustomSegmentedControl.swift */,
 				4408023B2369E39700318F38 /* LocationsView.swift */,
+				444552E9236BE31E009E1C22 /* NavigationController.swift */,
 			);
 			path = MobileEra;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				D05AA5A5208C64F1002DC68C /* SpeakersViewController.swift in Sources */,
 				D05AA5E6208C8663002DC68C /* Timeslot.swift in Sources */,
 				D0F51F95208D2725000E08AE /* SessionTableViewLegendCell.swift in Sources */,
+				444552EA236BE31E009E1C22 /* NavigationController.swift in Sources */,
 				D05AA5E2208C85B4002DC68C /* Day.swift in Sources */,
 				D05AA5E8208C8859002DC68C /* Utils.swift in Sources */,
 				440802382369C4B900318F38 /* TabBarController.swift in Sources */,
