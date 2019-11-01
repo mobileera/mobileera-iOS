@@ -64,7 +64,7 @@ class VenueViewController: BaseViewController {
     }
 
     @objc func showInfo() {
-        let alertController = UIAlertController.infoAlert()
+        let alertController = UIAlertController.infoAlert(from: navigationItem.rightBarButtonItem)
         present(alertController, animated: true, completion: nil)
     }
 

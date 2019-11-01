@@ -154,7 +154,7 @@ extension UIBarButtonItem {
 }
 
 extension UIAlertController {
-    static func infoAlert() -> UIViewController {
+    static func infoAlert(from button: UIBarButtonItem?) -> UIViewController {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alertController.view.tintColor = R.color.primaryColor()
         alertController.addAction(UIAlertAction(title: R.string.localizable.codeofconduct(), style: .default) { action in
@@ -174,6 +174,12 @@ extension UIAlertController {
             }
         })
         alertController.addAction(UIAlertAction(title: R.string.localizable.dismiss(), style: .cancel, handler: nil))
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            alertController.popoverPresentationController?.permittedArrowDirections = [.any]
+            alertController.popoverPresentationController?.barButtonItem = button
+        }
+
         return alertController
     }
 }
